@@ -62,7 +62,11 @@ header .icon_container .icon{
 }
 
 /* dropdown panels styles */
+<<<<<<< HEAD
 header .menu{
+=======
+header #menu{
+>>>>>>> master
     background: linear-gradient(86deg, var(--light-color-1) -700%, var(--light-color-2) 100%);
     border-radius: 2.7vw 0vw 0vw 2.7vw;
     height: 100vh;
@@ -80,22 +84,39 @@ header .menu{
     z-index: 991;
     overflow: auto;
 
+<<<<<<< HEAD
     transition: left 1s;
 }
 header .menu ul{
+=======
+    transition: left .5s;
+}
+header #menu ul{
+>>>>>>> master
     border-top: .1vh solid var(--light-color-1);
     list-style-type: none;
     padding-left: 0;
 }
+<<<<<<< HEAD
 header .menu li{
     font-weight: 300;
 }
 header .menu li a{
+=======
+header #menu li{
+    font-weight: 300;
+}
+header #menu li a{
+>>>>>>> master
     font-weight: 300;
     text-decoration: none;
 }
 
+<<<<<<< HEAD
 header .shopping{
+=======
+header #shopping{
+>>>>>>> master
     background: linear-gradient(86deg, var(--light-color-1) -700%, var(--light-color-2) 100%);
     border-radius: 2.7vw 0vw 0vw 2.7vw;
     height: 100vh;
@@ -106,5 +127,9 @@ header .shopping{
     left: 100vw;
     z-index: 990;
 
+<<<<<<< HEAD
     transition: left 1s;
+=======
+    transition: left .5s;
+>>>>>>> master
 }
