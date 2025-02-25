@@ -1,0 +1,43 @@
+body{
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    position: relative;
+}
+main{
+    height: 100%;
+    width: 100%;
+}
+main #opening_screen{
+    background: var(--box-color-1);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 0%;
+    transition: bottom 0.35s ease-out;
+}
+main #opening_screen .large_logo{
+    height: 20%;
+    position: relative;
+    top: 35%;
+}
+main #galery_access{
+    background: var(--box-color-2);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+main #galery_access .galery_button{
+    background: transparent;
+    border: .7vh solid var(--text-color-1);
+    border-radius: 6vh;
+    height: 17vh;
+    width: 55vh;
+    display: inline-block;
+    font-size: 10vh;
+    font-weight: 300;
+}
