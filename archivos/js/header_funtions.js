@@ -16,53 +16,68 @@ Last modification: 25/2/2025
  * @param {number} time_animation - The duration (in milliseconds) of the animation effects.
  */
 export const dropdown = (panel, movement, time_animation) => {
+    /**
+     * Changes the menu icon appearance based on the dropdown menu status.
+     * If the menu is active, a class is added to modify the icon.
+     * If the menu is inactive, the class is removed.
+     */
+    const change_menu_icon = () => {
+        const menuIcon = document.querySelector(".icon_menu");
+        const menu = document.getElementById("menu");
+
+        if (document.getElementById("menu").classList.contains("dropdown_active")) menuIcon.classList.add("menu-active")// Add class when menu is active
+        else if (!document.getElementById("menu").classList.contains("dropdown_active"))menuIcon.classList.remove("menu-active")// Remove class when menu is inactive
+    };
+    
+    /**
+     * Hides a dropdown panel by removing its active class, 
+     * moving it out of view, and setting it to hidden after the animation duration.
+     * 
+     * @param {HTMLElement} element - The panel element to be hidden.
+     */
+    const hide_panel = (element) => {
+        element.classList.remove("dropdown_active");
+        element.style.left = "100vw";
+        setTimeout(() => { element.style.visibility = "hidden"; }, time_animation);
+    };
+
+    /**
+     * Manages the blur effect on the header when a dropdown panel is active.
+     * It creates a blur element when a panel is open and removes it when no panels are active.
+     */
+    const blur_effect = () => {
+        const header = document.querySelector("header");
+        let header_blur = document.querySelector(".header_blur");
+
+        if (document.querySelector(".dropdown_active")) {
+            if (!header_blur) {
+                header_blur = document.createElement("div");
+                header_blur.classList.add("header_blur");
+                header.insertAdjacentElement("afterbegin", header_blur);
+                requestAnimationFrame(() => { header_blur.style.opacity = "1"; });
+            }
+        } else if (header_blur) {
+            header_blur.style.opacity = "0";
+            setTimeout(() => { header_blur.remove(); }, time_animation);
+        }
+    };
+
     document.querySelector(`.icon_${panel}`).addEventListener("click", () => {
         const panel_element = document.getElementById(panel);
         const dropdown_active = document.querySelector(".dropdown_active");
-        const header = document.querySelector("header");
-
-        /**
-         * Hides a dropdown panel by removing its active class, 
-         * moving it out of view, and setting it to hidden after the animation duration.
-         * 
-         * @param {HTMLElement} element - The panel element to be hidden.
-         */
-        const hide_panel = (element) => {
-            element.classList.remove("dropdown_active");
-            element.style.left = "100vw";
-            setTimeout(() => { element.style.visibility = "hidden"; }, time_animation);
-        };
-
-        /**
-         * Manages the blur effect on the header when a dropdown panel is active.
-         * It creates a blur element when a panel is open and removes it when no panels are active.
-         */
-        const blur_effect = () => {
-            let header_blur = document.querySelector(".header_blur");
-
-            if (document.querySelector(".dropdown_active")) {
-                if (!header_blur) {
-                    header_blur = document.createElement("div");
-                    header_blur.classList.add("header_blur");
-                    header.insertAdjacentElement("afterbegin", header_blur);
-                    requestAnimationFrame(() => { header_blur.style.opacity = "1"; });
-                }
-            } else if (header_blur) {
-                header_blur.style.opacity = "0";
-                setTimeout(() => { header_blur.remove(); }, time_animation);
-            }
-        };
 
         // If no panel is active, activate the selected panel
         if (!dropdown_active) {
             panel_element.classList.add("dropdown_active");
             panel_element.style.visibility = "visible";
             panel_element.style.left = movement;
+            change_menu_icon();
             blur_effect();
         } 
         // If the active panel is the same, deactivate it
-        else if (dropdown_active === panel_element) {
+        else if (dropdown_active === panel_element ) {
             hide_panel(panel_element);
+            change_menu_icon();
             blur_effect();
         } 
         // If another panel is active, deactivate it and activate the new one
@@ -71,6 +86,14 @@ export const dropdown = (panel, movement, time_animation) => {
             panel_element.classList.add("dropdown_active");
             panel_element.style.visibility = "visible";
             panel_element.style.left = movement;
+            change_menu_icon();
+            blur_effect();
+        }
+    });
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+            hide_panel(document.querySelector(".dropdown_active"));
+            change_menu_icon();
             blur_effect();
         }
     });

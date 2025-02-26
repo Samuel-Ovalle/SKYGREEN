@@ -1,3 +1,12 @@
+/* 
+======================================
+File: index_style.css
+Description: 
+Autor: Samuel Felipe Ovalle Rodriguez
+Last modification: 25/2/2025
+======================================
+*/
+
 body{
     height: 100vh;
     width: 100vw;
@@ -37,7 +46,10 @@ main #galery_access .galery_button{
     border-radius: 6vh;
     height: 17vh;
     width: 55vh;
+
     display: inline-block;
     font-size: 10vh;
     font-weight: 300;
+    text-align: center;
+    text-decoration: none;
 }
