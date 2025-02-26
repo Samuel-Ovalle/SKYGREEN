@@ -60,6 +60,23 @@ header .icon_container .icon{
     margin-top: 2vh;
     margin-right: 2vh;
 }
+header .icon_container .icon_menu .st2 {
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    transform-origin: center;
+}
+
+.menu-active .line1 {
+    transform: translateY(-30%) translateX(-40%) rotate(-45deg);
+}
+
+.menu-active .line2 {
+    opacity: 0;
+}
+
+.menu-active .line3 {
+    transform: translateY(30%) translateX(-40%) rotate(45deg);
+}
+
 
 /* dropdown panels styles */
 header #menu{

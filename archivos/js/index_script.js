@@ -1,12 +1,12 @@
-
 /* 
 ======================================
-File: opening_creen.js
+File: index_script.js
 Description: 
 Autor: Samuel Felipe Ovalle Rodriguez
 Last modification: 25/2/2025
 ======================================
 */
+
 import {dropdown, scroll_dropdown_panels} from "./header_funtions.js";
 window.addEventListener("load", ()=>{
     const opening_screen = document.getElementById("opening_screen");
@@ -15,7 +15,6 @@ window.addEventListener("load", ()=>{
     
     dropdown("menu", "73vw", 500)
     dropdown("shopping", "60vw", 500)
-
 
     let screen_position = 0;
     window.addEventListener("wheel", (e) => {  
