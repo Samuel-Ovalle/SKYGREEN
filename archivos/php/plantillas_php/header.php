@@ -60,11 +60,11 @@
             MENU
             <ul>
                 <li>Language</li>
-                <li><a href="Opening_screen.html">Homepage</a></li>
-                <li><a href="Gallery.html">Gallery</a></li>
-                <li><a href="About_Us.html">About Us</a></li>
-                <li><a href="Instructions.html">Instructions</a></li>
-                <li><a href="Customized.html">Customized</a></li>
+                <li><a href="index.php">Homepage</a></li>
+                <li><a href="Gallery.php">Gallery</a></li>
+                <li><a href="About_Us.php">About Us</a></li>
+                <li><a href="Instructions.php">Instructions</a></li>
+                <li><a href="Customized.php">Customized</a></li>
             </ul>
         </nav>
         <aside id="shopping"></aside>

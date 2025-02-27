@@ -22,6 +22,9 @@ Last modification: 19/2/2025
     --box-color-6: #969696;
 
     --delete-color-1: #8C1721;
+
+    --wall-color-1: #F2EADF;
+    --wall-color-2: #A68C6D;
 }
 *{
     font-family: "Poppins", serif;
