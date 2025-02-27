@@ -42,11 +42,12 @@ export const dropdown = (panel, movement, time_animation) => {
     };
 
     /**
-     * Manages the blur effect on the header when a dropdown panel is active.
+     * Manages the blur effect in the header and the entire screen when a dropdown panel is active.
      * It creates a blur element when a panel is open and removes it when no panels are active.
      */
     const blur_effect = () => {
         const header = document.querySelector("header");
+        const main = document.querySelector("main")
         let header_blur = document.querySelector(".header_blur");
 
         if (document.querySelector(".dropdown_active")) {
@@ -54,11 +55,19 @@ export const dropdown = (panel, movement, time_animation) => {
                 header_blur = document.createElement("div");
                 header_blur.classList.add("header_blur");
                 header.insertAdjacentElement("afterbegin", header_blur);
-                requestAnimationFrame(() => { header_blur.style.opacity = "1"; });
+                main.insertAdjacentHTML("afterbegin", `<div class="blur_screen"></div>`);
+                requestAnimationFrame(() => {
+                    header_blur.style.opacity = "1";
+                    document.querySelector(".blur_screen").style.opacity = "1";
+                });
             }
         } else if (header_blur) {
             header_blur.style.opacity = "0";
-            setTimeout(() => { header_blur.remove(); }, time_animation);
+            document.querySelector(".blur_screen").style.opacity = "0";
+            setTimeout(() => {
+                header_blur.remove();
+                document.querySelector(".blur_screen").remove();
+            }, time_animation);
         }
     };
 
@@ -89,6 +98,11 @@ export const dropdown = (panel, movement, time_animation) => {
             change_menu_icon();
             blur_effect();
         }
+        document.querySelector(".blur_screen").addEventListener("click", ()=>{
+            hide_panel(document.querySelector(".dropdown_active"));
+            change_menu_icon();
+            blur_effect();
+        })
     });
     document.addEventListener("keydown", (e) => {
         if (e.key === "Escape") {
@@ -97,6 +111,7 @@ export const dropdown = (panel, movement, time_animation) => {
             blur_effect();
         }
     });
+
 };
 
 /**

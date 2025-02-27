@@ -5,7 +5,7 @@
 <body>
     <?php include("plantillas_php/header.php");?>
     <main>
-        <section class="galery_section_1">
+        <section id="galery_section_1">
             <figure class="img_container">
             </figure>
         </section>

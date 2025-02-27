@@ -1,6 +1,6 @@
 <header>
         <h1 class="logo_container">
-            <a href="index.html" aria-label="">
+            <a href="index.php" aria-label="">
                 <svg class="icon icon_logo" role="img" aria-label="SKYGREEM logo" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 152.23 50.76" style="enable-background:new 0 0 152.23 50.76;" xml:space="preserve">
                     <style type="text/css">
                         .st0{fill:#F2F2F2;}

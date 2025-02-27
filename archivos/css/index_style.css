@@ -18,8 +18,9 @@ main{
     width: 100%;
 }
 main #opening_screen{
-    background-image: url(../../img/Product/Magic\ forest.png);
+    background: url(../../img/Product/Magic\ forest.png) center;
     background-size: cover;
+    background-attachment: fixed;
     height: 100%;
     width: 100%;
     display: flex;
