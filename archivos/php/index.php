@@ -42,9 +42,16 @@
                         C52.85,24.21,52.84,24.19,52.84,24.18z"/>
                 </g>
             </svg>
+            <svg class="scroll_arrow" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 125.36 125.36">
+                <defs>
+                    <style>.cls-1{fill:none;stroke:#fff;stroke-linecap:round;stroke-miterlimit:10;stroke-width:7px;}</style>
+                </defs>
+                <circle class="cls-1" cx="62.68" cy="62.68" r="59.18"/>
+                <polyline class="cls-1" points="94.03 48.26 78.36 67.77 62.68 87.27 47 67.77 31.33 48.26"/>
+            </svg>
         </section>
         <section id="galery_access">
-            <a class="galery_button" href="Gallery.html">GALLERY</a>
+            <a class="galery_button" href="Gallery.php">GALLERY</a>
         </section>
     </main>
     <script type="module" src="../js/index_script.js"></script>

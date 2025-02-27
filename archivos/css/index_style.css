@@ -1,9 +1,9 @@
 /* 
 ======================================
 File: index_style.css
-Description: 
+Description: Styles defined and used for the design template.
 Autor: Samuel Felipe Ovalle Rodriguez
-Last modification: 25/2/2025
+Last modification: 26/2/2025
 ======================================
 */
 
@@ -18,7 +18,8 @@ main{
     width: 100%;
 }
 main #opening_screen{
-    background: var(--box-color-1);
+    background-image: url(../../img/Product/Magic\ forest.png);
+    background-size: cover;
     height: 100%;
     width: 100%;
     display: flex;
@@ -32,8 +33,14 @@ main #opening_screen .large_logo{
     position: relative;
     top: 35%;
 }
+main #opening_screen .scroll_arrow{
+    height: 15%;
+    position: absolute;
+    top: 80%;
+}
 main #galery_access{
-    background: var(--box-color-2);
+    background-image: url(../../img/Product/Baby\ Sal.png);
+    background-size: cover;
     height: 100%;
     width: 100%;
     display: flex;

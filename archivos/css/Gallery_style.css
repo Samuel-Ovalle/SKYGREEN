@@ -1,0 +1,32 @@
+/* 
+======================================
+File: Gallery_style.css
+Description: Global styles for the entire website
+Autor: Samuel Felipe Ovalle Rodriguez
+Last modification: 26/2/2025
+======================================
+*/
+
+body{
+    background: linear-gradient(160deg, var(--wall-color-1), var(--wall-color-2));
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    position: relative;
+}
+body main{
+    height: 100%;
+    height: 100%;
+}
+body main section{
+    height: 100%;
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+}
+body main section .img_container{
+    height: 100%;
+    width: 100%;
+}
