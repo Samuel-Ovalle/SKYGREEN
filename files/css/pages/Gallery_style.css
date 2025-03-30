@@ -1,0 +1,123 @@
+/* 
+======================================
+File: Gallery_style.css
+Description: Global styles for the entire website
+Author: Samuel Felipe Ovalle Rodriguez
+Last modification: 29/3/2025
+======================================
+*/
+
+body{
+    background: linear-gradient(160deg, var(--wall-color-1), var(--wall-color-2));
+    height: 100vh;
+    width: 100vw;
+    max-height: 100vh;
+    /* overflow: hidden; */
+    position: relative;
+}
+body main{
+    height: 100%;
+    height: 100%;
+}
+body main section{
+    background: #ffffff;
+    height: 80%;
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(3, 33.3333%);
+    grid-template-rows: 100%;
+}
+body main section .img_container{
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+}
+body main section .img_container img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+body main .design_data{
+    border-radius: 5vh;
+    background: linear-gradient(86deg, var(--light-color-1) -700%, var(--light-color-2) 100%);
+    min-height: 70%;
+    width: 73%;
+    padding: 2%;
+    position: absolute;
+    top: 10%;
+    left: 15%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    justify-content: center;
+    align-items: center;
+}
+body main .design_data .design_img{
+    background: linear-gradient(-45deg, var(--wall-color-1) -30%, var(--wall-color-2) 200%);
+    border-radius: 5vh;
+    height: 60vh;
+    width: 30vw;
+    display: flex;
+    grid-column: 1/2;
+    grid-row: 1/5;
+    justify-content: center;
+    align-items: center;
+}
+body main .design_data .design_img img{
+    height: 80%;
+    max-width: 90%;
+    object-fit: contain;
+    filter: drop-shadow(-10px 10px 1px rgba(0, 0, 0, .5));
+}
+body main .design_data .product_name{
+    margin-left: 5%;
+    font-size: 3rem;
+}
+body main .design_data #product_units{
+    background: none;
+    border: none;
+    font-size: 3rem;
+    margin-left: 4%;
+    outline: none;
+    cursor: pointer;
+}
+body main .design_data #product_units option{
+    background-color: var(--light-color-2);
+}
+body main .design_data .product_data{
+    margin-left: 5%;
+    font-size: 1.3rem;
+    list-style-type: none;
+}
+body main .design_data .product_data li{
+    font-weight: 500;
+}
+body main .design_data .product_data .product_custom_info{
+    border: none;
+    border-radius: 2.5vh;
+    color: var(--text-color-2);
+    height: 4vh;
+    width: 50%;
+    padding-left: 5%;
+    font-size: 1.3rem;
+    font-weight: 600;
+    display: inline-block;
+}
+body main .design_data .product_data input:focus{outline: none;}
+body main .design_data .escape_button{
+    background: var(--light-color-1);
+    border-radius: 50%;
+    height: 7vh;
+    width: 7vh;
+    position: absolute;
+    top: -3%;
+    left: 97%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+body main .design_data .escape_button .esc_icon{
+    height: 70%;
+}
