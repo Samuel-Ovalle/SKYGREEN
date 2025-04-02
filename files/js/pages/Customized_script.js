@@ -15,7 +15,6 @@ window.addEventListener("load", ()=>{
     
     let products = []
     products = order_products(products)    
-
     for (let i = 0; i < localStorage.length; i++) {       
         let product_data = JSON.parse(localStorage.getItem(products[i]))
         
@@ -29,7 +28,6 @@ window.addEventListener("load", ()=>{
                         <li>Price: $${product_data.Price}</li>
                     </ul>
                     <button class="green_button confirm_button">CONFIRM</button>
-                    <button class="green_button custom_button">CUSTOM</button>
                     <button class="delete_button">
                         <svg class="trash_icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40.71 45.86">
                             <defs>
@@ -45,69 +43,6 @@ window.addEventListener("load", ()=>{
         )
     }
 
-    //custom product
-    document.querySelectorAll(".custom_button").forEach((custom_button) => {
-        custom_button.addEventListener("click", ()=>{
-            document.querySelector("main").insertAdjacentHTML("afterbegin",
-                `
-                <form id="data_customized_product">
-                    <div class="escape_button">
-                        <svg class="esc_icon" role="img" aria-label="menu icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"viewBox="0 0 48.07 45.61" style="enable-background:new 0 0 48.07 45.61;" xml:space="preserve">
-                            <style type="text/css">
-                                .st3{fill:none;stroke:#757575;stroke-width:7;stroke-linecap:round;stroke-miterlimit:10;}
-                            </style>
-                            <line class="st3 line1" x1="10" y1="35" x2="37" y2="10"/>
-                            <line class="st3 line2" x1="10" y1="10" x2="37" y2="35"/>
-                        </svg>
-                    </div>
-                    <div class="product_customized_img"></div>
-                    <input id="dimensions" class="input_customized" type="text" placeholder="Dimensions">
-                    <input id="orientation" class="input_customized" type="text" placeholder="Orientation">
-                    <input id="frame_color" class="input_customized" type="text" placeholder="Frame color">
-                    <input id="confirm_custom" type="submit" value="CONFIRM">
-                </form>
-                `
-            )
-
-            /**
-             * cancel customized
-             */
-            document.addEventListener("keydown", (e) => {if (e.key === "Escape") {document.getElementById("data_customized_product").remove();}})
-            document.querySelector(".escape_button").addEventListener("click", ()=>{document.getElementById("data_customized_product").remove();})
-
-            /**
-             * change text in placeholder on inputs
-             */
-            const text_placeholder = [
-                "Dimensions",
-                "30 x 30 in",
-                "Orientation",
-                "Horizontal",
-                "Frame color",
-                "Black"
-            ]
-            document.querySelectorAll(".input_customized").forEach((input_customized, index) => {           
-                input_customized.addEventListener("focus", ()=>{input_customized.attributes.placeholder.value = text_placeholder[(index * 2)+1]})
-                input_customized.addEventListener("blur", ()=>{input_customized.attributes.placeholder.value = text_placeholder[index * 2]})
-            })
-        
-
-            document.getElementById("confirm_custom").addEventListener("click", (e)=>{
-                e.preventDefault();
-                const dimensions = document.getElementById("dimensions").value;
-                const orientation = document.getElementById("orientation").value;
-                const frame_color = document.getElementById("frame_color").value;
-
-                if (dimensions === "" || orientation === "" || frame_color === "") {
-                    
-                }else{
-                    document.getElementById("data_customized_product").remove();
-                }
-
-            })
-        })
-    })
-
     /**
      * delete element in sopping
      */
@@ -116,6 +51,11 @@ window.addEventListener("load", ()=>{
             localStorage.removeItem(delete_button.parentElement.id)
             products.splice(index, 1)
             delete_button.parentElement.remove();
+            if (!document.querySelector(".customized_product")) {
+                document.querySelector(".customized_container").insertAdjacentHTML("afterbegin", `<b class="no_products">No products to purchase</b>`);
+                document.querySelector("#accept_products_button").textContent = "Go back";
+                document.getElementById("accept_products_button").addEventListener("click", ()=>{window.location.href = "../../php/pages/Gallery.php"})
+            }
         })
     })
 

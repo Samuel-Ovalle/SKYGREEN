@@ -6,7 +6,8 @@
     <?php include("../templates/header.php");?>
     <main>
         <section class="products_container" action="">
-            <ul class="customized_container"></ul>
+            <ul class="customized_container">
+            </ul>
             <button id="accept_products_button">PAY NOW</button>
         </section>
     </main>

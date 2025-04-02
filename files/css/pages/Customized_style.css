@@ -3,7 +3,7 @@
 File: Customized_style.css
 Description: 
 Author: Samuel Felipe Ovalle Rodriguez
-Last modification: 26/3/2025
+Last modification: 2/4/2025
 ======================================
 */
 body{
@@ -44,7 +44,7 @@ main .products_container .customized_container .customized_product{
     padding: 1% 2%;
     display: grid;
     grid-template-rows: 100%;
-    grid-template-columns: 20% 25% 22.5% 22.5% 7%;
+    grid-template-columns: 20% 47.5% 22.5% 7%;
     justify-content: center;
     align-items: center;
 }
@@ -91,59 +91,12 @@ main .products_container #accept_products_button{
     font-size: 5vh;
     font-weight: 500;
 }
-
-main #data_customized_product{
-    border-radius: 5vh;
-    background: var(--box-color-7);
-    height: 70%;
-    width: 70%;
-    padding: 4%;
-    position: absolute;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(4, 1fr);
-    justify-content: center;
-    align-items: center;
-}
-main #data_customized_product .escape_button{
-    background: var(--light-color-1);
-    border-radius: 50%;
-    height: 7vh;
-    width: 7vh;
-    position: absolute;
-    top: -3%;
-    left: 97%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-}
-main #data_customized_product .escape_button .esc_icon{
-    height: 70%;
-}
-main #data_customized_product .product_customized_img{
-    background: #fff;
+main .products_container .customized_container .no_products{
     height: 100%;
     width: 100%;
-    grid-column: 1/2;
-    grid-row: 1/5;
-}
-main #data_customized_product input{
-    border: .7vh solid var(--box-color-2);
-    border-radius: 3vh;
-    color: var(--text-color-2);
-    height: 80%;
-    width: 85%;
-    margin-left: 10%;
+    font-size: 3rem;
     text-align: center;
-    font-size: 4vh;
-    font-weight: 400;
-}
-main #data_customized_product input:focus{outline: none;}
-main #data_customized_product #confirm_custom{
-    border: none;
-    background: var(--box-color-4);
-    color: var(--text-color-1);
-    font-size: 6vh;
-    font-weight: 400;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
