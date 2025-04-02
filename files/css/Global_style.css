@@ -3,7 +3,7 @@
 File: Global_style.css
 Description: Global styles for the entire website
 Author: Samuel Felipe Ovalle Rodriguez
-Last modification: 1/3/2025
+Last modification: 1/4/2025
 ======================================
 */
 
@@ -21,11 +21,13 @@ Last modification: 1/3/2025
     --box-color-5: #E4E4E3;
     --box-color-6: #969696;
     --box-color-7: #BBD28C;
+    --box-color-8: #D9BD9C;
+    --box-color-9: #A68C6D;
 
     --delete-color-1: #8C1721;
 
-    --wall-color-1: #D9BD9C;
-    --wall-color-2: #A68C6D;
+    --wall-color-0: #BFBFBF;
+    --wall-color-1: #737373;
 }
 
 @font-face {

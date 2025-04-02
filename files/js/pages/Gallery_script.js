@@ -3,11 +3,11 @@
 File: Gallery_script.js
 Description: 
 Author: Samuel Felipe Ovalle Rodriguez
-Last modification: 29/3/2025
+Last modification: 2/4/2025
 ======================================
 */
 
-import {dropdown, server_response, products_in_cart} from "../functions/header_functions.js";
+import {dropdown, scroll_dropdown_panels, server_response, products_in_cart, order_products} from "../functions/header_functions.js";
 
 const gallery_designs = async () => {  
     /**
@@ -148,7 +148,7 @@ const gallery_designs = async () => {
     // Get designs & inventory on db
     let designs = await server_response("get_designs");
     const inventory = await server_response("get_inventory");  
-
+    
     for (let i = designs.length - 1; i > 0; i--) {
         let j = Math.floor(Math.random() * (i + 1));
         [designs[i], designs[j]] = [designs[j], designs[i]];
@@ -161,12 +161,22 @@ const gallery_designs = async () => {
     let width_container = 3;
     let height_container = 1;
     let full_space = height_container * width_container;
+    let main_space = array_all_designs.length*100
+    document.querySelector("main").style.width = `${main_space}%`;
+
     array_all_designs.forEach((element, index) =>{
-        document.querySelector("main").insertAdjacentHTML("beforeend",`<section id="gallery_section_${index+1}"></section>`)
-        
+        document.querySelector("main").insertAdjacentHTML("beforeend",`
+            <section id="gallery_section_${index+1}">
+                <div class="wall"></div>
+                <div class="floor"></div>
+            </section>
+            `
+        )
+
+        document.querySelector(`#gallery_section_${index+1} .floor`).style.backgroundImage = `url(../../../assets/background_img/floor_${index+1}.jpg)`
+
         for (let i = 0; i < element.length; i++) {
-            document.querySelector(`#gallery_section_${index+1}`).insertAdjacentHTML("beforeend",
-                `
+            document.querySelector(`#gallery_section_${index+1} .wall`).insertAdjacentHTML("afterbegin",`
                 <figure id="${element[i].Id_design}" class="img_container">
                     <img src="../../../img/${element[i].Image}" alt="${element[i].Product_name}">
                 </figure>
@@ -182,6 +192,20 @@ const gallery_designs = async () => {
     // center the user screen
     document.getElementById("gallery_section_1").scrollIntoView({ behavior: "auto" });
     history.scrollRestoration = "manual";
+
+    let screen = document.querySelector("main");
+    let screen_position = 0;    
+    window.addEventListener("wheel", (e) => {  
+        let cursor_status = scroll_dropdown_panels();          
+        if (e.deltaY > 0) {
+            // right            
+            if (screen_position > (-main_space + 103) &&  cursor_status == true) screen.style.left = `${screen_position = screen_position - 10}vw`
+            else if (cursor_status === true) screen.style.left = `${-main_space + 100}%`
+        } else{
+            // left
+            if (screen_position !== 0 &&  cursor_status == true) screen.style.left = `${screen_position = screen_position + 10}vw`
+        }
+    });
  
     designs.sort((a, b) => a.Id_design - b.Id_design);    
     document.querySelectorAll(".img_container").forEach(element => {element.addEventListener("click", ()=>{
@@ -209,7 +233,7 @@ const gallery_designs = async () => {
                 product_options = product_options + product_data;
             }else if (products_in_inventory.length == 1) product_options = product_options + product_data;
         }
-        document.querySelector("main").insertAdjacentHTML("afterbegin",
+        document.querySelector("main").insertAdjacentHTML("afterend",
             `
             <form action="" class="design_data">
                 <div class="escape_button">
@@ -278,7 +302,13 @@ const gallery_designs = async () => {
         })
         document.querySelector("#add_to_cart_button").addEventListener("click", (e)=>{
             e.preventDefault();
-            let product_data
+            let product_data;
+            let products_in_cart = [];
+            order_products(products_in_cart);
+            let product_identification = products_in_cart[products_in_cart.length-1];
+            if (product_identification !== undefined) product_identification = parseInt(product_identification.split("_")[1]);
+            else product_identification = 0;
+            
             if (document.querySelector("#product_units")) product_data = {
                 Id_design: product.Id_design,
                 Product_name: product.Product_name,
@@ -298,8 +328,9 @@ const gallery_designs = async () => {
                 Price: document.querySelector("#price").textContent.split("Price: $")[1],
                 Image: product.Image,
             }
-            localStorage.setItem(`product_${localStorage.length+1}`, JSON.stringify(product_data));
-            document.querySelector(".design_data").remove();             
+            
+            localStorage.setItem(`product_${product_identification+1}`, JSON.stringify(product_data));
+            document.querySelector(".design_data").remove();          
         })
     })});
 }
@@ -308,5 +339,5 @@ window.addEventListener("load", ()=>{
     dropdown("menu", "73vw", 500);
     dropdown("shopping", "60vw", 500);   
     products_in_cart(500);
-    gallery_designs();    
+    gallery_designs();
 })

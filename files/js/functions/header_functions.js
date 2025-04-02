@@ -3,7 +3,7 @@
 File: header_functions.js
 Description: Essential functions for the operation of drop-down panels
 Author: Samuel Felipe Ovalle Rodriguez
-Last modification: 29/3/2025
+Last modification: 2/4/2025
 ======================================
 */
 
@@ -172,27 +172,45 @@ export const products_in_cart = (time_animation)=>{
                     let product_data = JSON.parse(localStorage.getItem(products[i]))
                     document.querySelector(".products_container").insertAdjacentHTML("beforeend", 
                         `
-                        <li class="product_to_buy">
+                        <li id="${products[i]}" class="product_to_buy">
                             <img src="../../../img/${product_data.Image}" alt="${product_data.Product_name}">
                             <ul class="product_data_to_buy">
                                 <li>Dimensions: ${product_data.Dimension}</li>
                                 <li>Frame color: ${product_data.Frame_color}</li>
                                 <li>Price: $${product_data.Price}</li>
                             </ul>
+                            <div class="delete_product">
+                                <svg class="esc_icon" role="img" aria-label="menu icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"viewBox="0 0 48.07 45.61" style="enable-background:new 0 0 48.07 45.61;" xml:space="preserve">
+                                    <style type="text/css">
+                                        .st3{fill:none;stroke:#F2F2F2;stroke-width:3;stroke-linecap:round;stroke-miterlimit:10;}
+                                    </style>
+                                    <line class="st3 line1" x1="10" y1="35" x2="37" y2="10"/>
+                                    <line class="st3 line2" x1="10" y1="10" x2="37" y2="35"/>
+                                </svg>
+                            </div>
                         </li>
                         `
                     )
                 }
-                document.querySelector("#shopping").insertAdjacentHTML("beforeend", `<button id="confirm_products" class="green_button">CONFIRM</button>`)
-                document.querySelector("#confirm_products").addEventListener("click", ()=>{window.location.href = "../../php/pages/Customized.php"})
-            }else document.querySelector(".products_container").insertAdjacentHTML("afterbegin", `<b class="no_products">No products to purchase</b>`)
+                document.querySelectorAll(".delete_product").forEach((delete_button, index)=>{
+                    delete_button.addEventListener("click", ()=>{
+                        localStorage.removeItem(delete_button.parentElement.id)
+                        products.splice(index, 1)
+                        delete_button.parentElement.remove();
+                        if (!document.querySelector(".product_to_buy")) {
+                            document.querySelector("#confirm_products").remove();
+                            document.querySelector(".products_container").insertAdjacentHTML("afterbegin", `<b class="no_products">No products to purchase</b>`);
+                        }
+                    })
+                })
+                document.querySelector("#shopping").insertAdjacentHTML("beforeend", `<button id="confirm_products" class="green_button">CONFIRM</button>`);
+                document.querySelector("#confirm_products").addEventListener("click", ()=>{window.location.href = "../../php/pages/Customized.php"});
+            }else document.querySelector(".products_container").insertAdjacentHTML("afterbegin", `<b class="no_products">No products to purchase</b>`);
         }else{
             setTimeout(()=>{
-                if (document.querySelector(".product_to_buy")) {
-                    document.querySelectorAll(".product_to_buy").forEach(element =>{element.remove()})
-                    document.querySelector("#confirm_products").remove()
-                }
-                else if (document.querySelector(".no_products")) document.querySelector(".no_products").remove();   
+                if (document.querySelector(".product_to_buy")) document.querySelectorAll(".product_to_buy").forEach(element =>{element.remove()});
+                if (document.querySelector(".no_products")) document.querySelector(".no_products").remove();  
+                if (document.querySelector("#confirm_products")) document.querySelector("#confirm_products").remove();
             }, time_animation)
         }
     })       

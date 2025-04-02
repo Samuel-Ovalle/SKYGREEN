@@ -3,49 +3,76 @@
 File: Gallery_style.css
 Description: Global styles for the entire website
 Author: Samuel Felipe Ovalle Rodriguez
-Last modification: 29/3/2025
+Last modification: 1/4/2025
 ======================================
 */
 
 body{
-    background: linear-gradient(160deg, var(--wall-color-1), var(--wall-color-2));
     height: 100vh;
-    width: 100vw;
     max-height: 100vh;
-    /* overflow: hidden; */
-    position: relative;
+    overflow: hidden;
 }
 body main{
     height: 100%;
-    height: 100%;
+    display: flex;
+    position: relative;
+    left: 0%;
+    transition: left 0.35s ease-out;
 }
 body main section{
-    background: #ffffff;
-    height: 80%;
-    width: 100%;
-
+    background: radial-gradient(circle at 30% 37%, var(--wall-color-0) 40%, var(--wall-color-1) 100%);
+    height: 100vh;
+    width: 100vw;
+}
+body main section .wall{
+    height: 40vh;
+    width: 95vw;
+    margin: 0vh 2.5vw;
     display: grid;
     grid-template-columns: repeat(3, 33.3333%);
     grid-template-rows: 100%;
+    position: absolute;
+    top: 20%;
 }
-body main section .img_container{
+body main section .wall .img_container{
     height: 100%;
     width: 100%;
     cursor: pointer;
 }
-body main section .img_container img{
+body main section .wall .img_container img{
     height: 100%;
     width: 100%;
     object-fit: contain;
+    filter: drop-shadow(5px 5px 1px rgba(0, 0, 0, .5));
 }
-body main .design_data{
+body main section .floor{
+    background-size: cover;
+    background-position: center;
+    box-shadow: inset 0px 5px 10px rgba(0, 0, 0, .2);
+    height: 20vh;
+    width: 100vw;
+    position: absolute;
+    top: 80vh;
+}
+body main section .floor::before{
+    content: "";
+    background-image: url(../../../assets/background_img/wood_texture_2.jpg);
+    background-size: contain;
+    box-shadow: inset 0px -5px 5px rgba(0, 0, 0, .5);
+    height: 15%;
+    width: 100%;
+    position: absolute;
+    top: -15%;
+}
+body .design_data{
     border-radius: 5vh;
     background: linear-gradient(86deg, var(--light-color-1) -700%, var(--light-color-2) 100%);
-    min-height: 70%;
-    width: 73%;
+    max-height: 85vh;
+    min-height: 70vh;
+    width: 73vw;
     padding: 2%;
-    position: absolute;
-    top: 10%;
+    position: sticky;
+    bottom: 7.5%;
     left: 15%;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -53,8 +80,8 @@ body main .design_data{
     justify-content: center;
     align-items: center;
 }
-body main .design_data .design_img{
-    background: linear-gradient(-45deg, var(--wall-color-1) -30%, var(--wall-color-2) 200%);
+body .design_data .design_img{
+    background: linear-gradient(-45deg, var(--box-color-8) -30%, var(--box-color-9) 200%);
     border-radius: 5vh;
     height: 60vh;
     width: 30vw;
@@ -64,17 +91,17 @@ body main .design_data .design_img{
     justify-content: center;
     align-items: center;
 }
-body main .design_data .design_img img{
+body .design_data .design_img img{
     height: 80%;
     max-width: 90%;
     object-fit: contain;
     filter: drop-shadow(-10px 10px 1px rgba(0, 0, 0, .5));
 }
-body main .design_data .product_name{
+body .design_data .product_name{
     margin-left: 5%;
     font-size: 3rem;
 }
-body main .design_data #product_units{
+body .design_data #product_units{
     background: none;
     border: none;
     font-size: 3rem;
@@ -82,18 +109,18 @@ body main .design_data #product_units{
     outline: none;
     cursor: pointer;
 }
-body main .design_data #product_units option{
+body .design_data #product_units option{
     background-color: var(--light-color-2);
 }
-body main .design_data .product_data{
+body .design_data .product_data{
     margin-left: 5%;
     font-size: 1.3rem;
     list-style-type: none;
 }
-body main .design_data .product_data li{
+body .design_data .product_data li{
     font-weight: 500;
 }
-body main .design_data .product_data .product_custom_info{
+body .design_data .product_data .product_custom_info{
     border: none;
     border-radius: 2.5vh;
     color: var(--text-color-2);
@@ -104,8 +131,8 @@ body main .design_data .product_data .product_custom_info{
     font-weight: 600;
     display: inline-block;
 }
-body main .design_data .product_data input:focus{outline: none;}
-body main .design_data .escape_button{
+body .design_data .product_data input:focus{outline: none;}
+body .design_data .escape_button{
     background: var(--light-color-1);
     border-radius: 50%;
     height: 7vh;
@@ -118,6 +145,6 @@ body main .design_data .escape_button{
     align-items: center;
     cursor: pointer;
 }
-body main .design_data .escape_button .esc_icon{
+body .design_data .escape_button .esc_icon{
     height: 70%;
 }

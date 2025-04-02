@@ -3,7 +3,7 @@
 File: Customized_script.js
 Description: 
 Author: Samuel Felipe Ovalle Rodriguez
-Last modification: 27/3/2025
+Last modification: 2/4/2025
 ======================================
 */
 import {dropdown, order_products} from "../functions/header_functions.js";
@@ -21,7 +21,7 @@ window.addEventListener("load", ()=>{
         
         document.querySelector(".customized_container").insertAdjacentHTML("beforeend", 
             `
-                <li class="customized_product">
+                <li id="${products[i]}" class="customized_product">
                     <img src="../../../img/${product_data.Image}" alt="${product_data.Product_name}">
                     <ul class="product_customized_data">
                         <li>dimensions: ${product_data.Dimension}</li>
@@ -113,7 +113,7 @@ window.addEventListener("load", ()=>{
      */
     document.querySelectorAll(".delete_button").forEach((delete_button, index)=>{
         delete_button.addEventListener("click", ()=>{
-            localStorage.removeItem(products[index])
+            localStorage.removeItem(delete_button.parentElement.id)
             products.splice(index, 1)
             delete_button.parentElement.remove();
         })
