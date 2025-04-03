@@ -6,6 +6,7 @@
     <?php include("../templates/header.php");?>
     <main>
         <section class="products_container" action="">
+            <input id="order_code" type="text" name="" id="" placeholder="Order code">
             <ul class="customized_container">
             </ul>
             <button id="accept_products_button">PAY NOW</button>

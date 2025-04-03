@@ -54,7 +54,7 @@ window.addEventListener("load", ()=>{
             if (!document.querySelector(".customized_product")) {
                 document.querySelector(".customized_container").insertAdjacentHTML("afterbegin", `<b class="no_products">No products to purchase</b>`);
                 document.querySelector("#accept_products_button").textContent = "Go back";
-                document.getElementById("accept_products_button").addEventListener("click", ()=>{window.location.href = "../../php/pages/Gallery.php"})
+                document.getElementById("accept_products_button").addEventListener("click", ()=>{window.location.href = "../../php/pages/Gallery.php"});
             }
         })
     })
@@ -63,4 +63,10 @@ window.addEventListener("load", ()=>{
      * move to purchase subpage
      */
     document.getElementById("accept_products_button").addEventListener("click", ()=>{window.location.href = "../../php/pages/Purchase.php"})
+
+    if (!document.querySelector(".customized_product")) {
+        document.querySelector(".customized_container").insertAdjacentHTML("afterbegin", `<b class="no_products">No products to purchase</b>`);
+        document.querySelector("#accept_products_button").textContent = "Go back";
+        document.getElementById("accept_products_button").addEventListener("click", ()=>{window.location.href = "../../php/pages/Gallery.php"});
+    }
 })

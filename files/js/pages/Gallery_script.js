@@ -3,11 +3,11 @@
 File: Gallery_script.js
 Description: 
 Author: Samuel Felipe Ovalle Rodriguez
-Last modification: 2/4/2025
+Last modification: 3/4/2025
 ======================================
 */
 
-import {dropdown, scroll_dropdown_panels, server_response, products_in_cart, order_products} from "../functions/header_functions.js";
+import {dropdown, scroll_dropdown_panels, server_response, order_products} from "../functions/header_functions.js";
 
 const gallery_designs = async () => {  
     /**
@@ -161,7 +161,7 @@ const gallery_designs = async () => {
     let width_container = 3;
     let height_container = 1;
     let full_space = height_container * width_container;
-    let main_space = array_all_designs.length*100
+    let main_space = array_all_designs.length*100;
     document.querySelector("main").style.width = `${main_space}%`;
 
     array_all_designs.forEach((element, index) =>{
@@ -269,36 +269,16 @@ const gallery_designs = async () => {
         document.addEventListener("keydown", (e) => {if (e.key === "Escape" && document.querySelector(".design_data")) document.querySelector(".design_data").remove();})
         document.querySelector(".escape_button").addEventListener("click", ()=>{document.querySelector(".design_data").remove();})
 
-        let dimensions_data = document.querySelector("#dimensions").textContent;
-        let frame_color_data = document.querySelector("#frame_color").textContent;
         document.querySelector("#custom_button").addEventListener("click", (e)=>{
             e.preventDefault();
-            if (document.querySelector("#custom_button").textContent === "CUSTOM") {
-                document.querySelector("#custom_button").textContent = "ACCEPT"
-                document.querySelectorAll(".product_info").forEach((element, index) =>{if(index<2){element.style.display = "none"}}) 
-                
-                console.log(document.querySelector(".product_data"));
-                
-                document.querySelector(".product_data").insertAdjacentHTML("afterbegin",
-                `
-                    <input class="product_custom_info" id="dimensions" type="text" placeholder="Dimensions">
-                    <input class="product_custom_info" id="frame_color" type="text" placeholder="Frame color">
-                `)
+            let number = "17866020877";
+            let message = encodeURIComponent(`Hello, I want to customize the frame ${product.Product_name}`);
 
-                const text_placeholder = ["Dimensions", "30 x 30 in", "Frame color", "Black"]
-                document.querySelectorAll(".product_custom_info").forEach((input_customized, index) => {           
-                    input_customized.addEventListener("focus", ()=>{input_customized.attributes.placeholder.value = text_placeholder[(index * 2)+1]})
-                    input_customized.addEventListener("blur", ()=>{input_customized.attributes.placeholder.value = text_placeholder[index * 2]})
-                })
-            } else {                
-                if (document.querySelector("#dimensions").value.trim() !== "") dimensions_data = `Dimensions: ${document.querySelector("#dimensions").value}`;
-                if (document.querySelector("#frame_color").value.trim() !== "") frame_color_data = `Frame color: ${document.querySelector("#frame_color").value}`;               
-                document.querySelector("#custom_button").textContent = "CUSTOM"
-                document.querySelectorAll(".product_custom_info").forEach(element =>{element.remove()})
-                document.querySelectorAll(".product_info").forEach(element =>{element.style.display = "block";})
-                document.querySelector("#dimensions").textContent = dimensions_data;
-                document.querySelector("#frame_color").textContent = frame_color_data;
-            }
+            let urlWeb = `https://web.whatsapp.com/send?phone=${number}&text=${message}`;
+            let urlApp = `https://wa.me/${number}?text=${message}`; 
+    
+            if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) window.open(urlApp, "_blank");
+            else window.open(urlWeb, "_blank");
         })
         document.querySelector("#add_to_cart_button").addEventListener("click", (e)=>{
             e.preventDefault();
@@ -338,6 +318,30 @@ const gallery_designs = async () => {
 window.addEventListener("load", ()=>{
     dropdown("menu", "73vw", 500);
     dropdown("shopping", "60vw", 500);   
-    products_in_cart(500);
-    gallery_designs();
+    gallery_designs();    
+    
+    document.querySelectorAll(".icon").forEach((element, index) =>{
+        if (index !== 0) {
+            element.addEventListener("click", ()=>{
+                if (document.querySelector(".dropdown_active")) {
+                    document.querySelector("#design_name").style.zIndex = "920";
+                    document.querySelector("#icon_magnifier").style.zIndex = "921";
+                    document.querySelector("#icon_delete_text_design").style.zIndex = "923";
+                }
+                else setTimeout(()=>{
+                    document.querySelector("#design_name").style.zIndex = "1005";
+                    document.querySelector("#icon_magnifier").style.zIndex = "1006";
+                    document.querySelector("#icon_delete_text_design").style.zIndex = "1007";
+                }, 500)
+            })
+            document.addEventListener("keydown", (e) => {
+                if (e.key === "Escape" && document.querySelector(".dropdown_active")) {
+                    document.querySelector("#design_name").style.zIndex = "1005";
+                    document.querySelector("#icon_magnifier").style.zIndex = "1006";
+                    document.querySelector("#icon_delete_text_design").style.zIndex = "1007";
+                }
+            });
+        }
+    })
+    
 })

@@ -31,6 +31,21 @@ main .products_container{
     justify-content: start;
     align-items: center;
 }
+main .products_container #order_code{
+    background: var(--box-color-5);
+    color: var(--text-color-2);
+    border: none;
+    border-radius: 2.5vh;
+    height: 10%;
+    width: 50%;
+    font-size: 4vh;
+    font-weight: 400;
+    text-align: center;
+}
+main .products_container #order_code::placeholder{
+    color: var(--text-color-2);
+    font-weight: 400;
+}
 main .products_container .customized_container{
     height: 85%;
     width: 100%;
@@ -94,7 +109,7 @@ main .products_container #accept_products_button{
 main .products_container .customized_container .no_products{
     height: 100%;
     width: 100%;
-    font-size: 3rem;
+    font-size: 6rem;
     text-align: center;
     display: flex;
     align-items: center;

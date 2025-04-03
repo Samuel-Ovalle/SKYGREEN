@@ -65,17 +65,11 @@ header .icon_container .icon_menu .st2 {
     transform-origin: center;
 }
 
-.menu_active .line1 {
-    transform: translateY(-30%) translateX(-40%) rotate(-45deg);
-}
+.menu_active .line1 {transform: translateY(-30%) translateX(-40%) rotate(-45deg);}
 
-.menu_active .line2 {
-    opacity: 0;
-}
+.menu_active .line2 {opacity: 0;}
 
-.menu_active .line3 {
-    transform: translateY(30%) translateX(-40%) rotate(45deg);
-}
+.menu_active .line3 {transform: translateY(30%) translateX(-40%) rotate(45deg);}
 
 
 /* dropdown panels styles */
@@ -104,9 +98,7 @@ header #menu ul{
     list-style-type: none;
     padding-left: 0;
 }
-header #menu li{
-    font-weight: 300;
-}
+header #menu li{font-weight: 300;}
 header #menu li a{
     font-weight: 300;
     text-decoration: none;
@@ -154,8 +146,16 @@ header #shopping .products_container .product_to_buy img{
     align-self: center;
 }
 header #shopping .products_container .product_to_buy .product_data_to_buy{
+    height: 100%;
     margin-left: 5%;
     list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+header #shopping .products_container .product_to_buy .product_data_to_buy li{
+    font-size: 1rem;
+    font-weight: 400;
 }
 header #shopping .products_container .product_to_buy .delete_product{
     border-radius: 50%;
@@ -172,6 +172,22 @@ header #shopping .products_container .product_to_buy .delete_product{
 header #shopping .products_container .product_to_buy .delete_product svg{
     height: 80%;
 }
+header #shopping .order_code{
+    background: var(--box-color-5);
+    color: var(--text-color-2);
+    border: none;
+    border-radius: 2.5vh;
+    height: 10%;
+    width: 90%;
+    margin-left: 5%;
+    font-size: 4vh;
+    font-weight: 400;
+    text-align: center;
+}
+header #shopping .order_code::placeholder{
+    color: var(--text-color-3);
+    font-weight: 400;
+}
 header #shopping #confirm_products{
     height: 10%;
     width: 90%;
@@ -182,6 +198,7 @@ header #shopping .no_products{
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 2rem;
 }
 .blur_screen{
     backdrop-filter: blur(5px);
