@@ -1,0 +1,99 @@
+:root{
+    --back-color-1: #2D261C;
+    --back-color-2: #14110D;
+    --back-color-3: #120F08;
+    --back-color-4: #0d0901;
+
+    --text-color-1: #F2EAD8;
+    --text-color-2: #C7BFAF;
+    --text-color-3: #1B1813;
+    --text-color-4: #946523;
+
+    --button-color-1: #a76d2f;
+    --button-color-2: #e6d7c0;
+
+    --border-color-1: #6f521f;
+}
+
+@font-face {
+    font-family: 'CormorantGaramond';
+    src: url('../../../assets/fonts/Cormorant_Garamond/static/CormorantGaramond-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'CormorantGaramond';
+    src: url('../../../assets/fonts/Cormorant_Garamond/static/CormorantGaramond-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'CormorantGaramond';
+    src: url('../../../assets/fonts/Cormorant_Garamond/static/CormorantGaramond-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'CormorantGaramond';
+    src: url('../../../assets/fonts/Cormorant_Garamond/static/CormorantGaramond-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'CormorantGaramond';
+    src: url('../../../assets/fonts/Cormorant_Garamond/static/CormorantGaramond-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+*{
+    font-family: "Poppins", serif;
+    font-weight: 300;
+    font-style: normal;
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+    color: var(--text-color-2);
+    text-decoration: none;
+}
+
+li{
+    list-style-type: none;
+    padding-left: 0;
+}
+
+body{
+    background: radial-gradient(circle at 50% 0%, var(--back-color-1), var(--back-color-2) 40%);
+    overflow-x: hidden;
+}
+body header{
+    box-shadow: 0vh 1vh 15px rgba(0, 0, 0, .5);
+    height: 10%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+body header ul{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+body header ul a{
+    color: var(--text-color-1);
+    font-size: 1.1em;
+}
