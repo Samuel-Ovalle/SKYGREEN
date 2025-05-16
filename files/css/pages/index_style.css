@@ -1,64 +1,200 @@
-/* 
-======================================
-File: index_style.css
-Description: Styles defined and used for the design template.
-Author: Samuel Felipe Ovalle Rodriguez
-Last modification: 3/4/2025
-======================================
-*/
-
 body{
-    height: 100vh;
+    height: min-content;
     width: 100vw;
-    overflow: hidden;
-    position: relative;
 }
-main{
+body main{
+    height: 230vh;
+    width: 100%;
+    display: grid;
+    grid-template-rows: 100vh 75vh 55vh;
+    justify-items: center;
+}
+
+body main #home{
     height: 100%;
     width: 100%;
-}
-main #opening_screen{
-    background: url(../../../assets/background_img/Magic_forest.png) center;
-    background-size: cover;
-    background-attachment: fixed;
-    height: 100%;
-    width: 100%;
+    padding-top: 11vh;
     display: flex;
-    justify-content: center;
-    position: absolute;
-    bottom: 0%;
-    transition: bottom 0.35s ease-out;
-}
-main #opening_screen .large_logo{
-    height: 20%;
-    position: relative;
-    top: 35%;
-}
-main #opening_screen .scroll_arrow{
-    height: 15%;
-    position: absolute;
-    top: 80%;
-    cursor: pointer;
-}
-main #gallery_access{
-    background-image: url(../../../assets/background_img/flat_moon_dark.png);
-    background-size: cover;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
 }
-main #gallery_access .gallery_button{
-    background: transparent;
-    border: 1vh solid var(--text-color-1);
-    border-radius: 6vh;
-    height: 17vh;
-    width: 55vh;
-
-    display: inline-block;
-    font-size: 10vh;
-    font-weight: 500;
+body main #home img{
+    height: 45vh;
+    filter: drop-shadow(-.5vh 1vh 3px rgba(0, 0, 0, .5));
+    position: relative;
+    bottom: 2vh;
+}
+body main #home .text_box{
+    position: relative;
+    bottom: 10vh;
     text-align: center;
-    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+body main #home .text_box h1{
+    color: var(--text-color-1);
+    margin-bottom: 2vh;
+    font-size: 4em;
+}
+body main #home .text_box p{
+    max-width: 40vw;
+    font-size: 1.7em;
+}
+body main #home .view_page{
+    border: none;
+    border-radius: 1vh;
+    background: var(--button-color-1);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    color: var(--text-color-1);
+    height: 8vh;
+    width: 30vh;
+    font-size: 1.3em;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+body main #home .view_page:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.4);
+}
+
+body main #branches{
+    height: 100%;
+    width: 80%;
+    padding-top: 10vh;
+    display: flex;
+    justify-content: space-evenly;
+}
+body main #branches::before {
+    content: "";
+    position: absolute;
+    top: 100vh;
+    left: 10vw;
+    height: 2px;
+    width: 80%;
+    background: linear-gradient(to right, transparent, var(--border-color-1), transparent);
+}
+body main #branches .banner{
+    border: 2px solid var(--border-color-1);
+    box-shadow: inset .5vh .5vh 10px rgba(0, 0, 0, .5), inset -.5vh -.5vh 10px rgba(0, 0, 0, .5);
+    height: 65vh;
+    width: 30vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+body main #branches .banner img{
+    height: 37%;
+    filter: drop-shadow(-.5vh 1vh 3px rgba(0, 0, 0, .5));
+}
+body main #branches .banner h3{
+    color: var(--text-color-1);
+    font-size: 2em;
+    font-weight: 300;
+}
+body main #branches .banner h4{
+    color: var(--text-color-4);
+    font-size: 1.3em;
+    font-weight: 600;
+}
+body main #branches .banner div{
+    border: 1px solid var(--border-color-1);
+    background: var(--back-color-4);
+    height: 43.5%;
+    width: 90%;
+    margin-top: 3%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+body main #branches .banner div p{
+    height: 25%;
+    padding-top: 5%;
+    text-align: center;
+}
+body main #branches .banner div p:nth-child(1){
+    font-size: 1.3em;
+}
+body main #branches .banner div p:nth-child(2){
+    font-size: 1.1em;
+    margin-bottom: 5%;
+}
+body main #branches .banner div button{
+    border: 2px solid var(--border-color-1);
+    border-radius: 1vh;
+    background: linear-gradient(var(--back-color-1) -50%, var(--back-color-2));
+    height: 30%;
+    width: 60%;
+    font-size: 1.1em;
+}
+
+body main #about{
+    height: 100%;
+    width: 80%;
+    display: flex;
+    align-items: center;
+}
+body main #about img{
+    height: 70%;
+}
+body main #about p{
+    font-size: 1.2em;
+}
+
+body footer{
+    background: var(--back-color-4);
+    height: 40vh;
+    width: 100%;
+}
+
+@media (width < 648px) {
+    body main{
+        height: 240vh;
+        grid-template-rows: 100vh 80vh 65vh;
+    }
+
+    body main #home .text_box p{
+        max-width: 90vw;
+    }
+
+    body main #branches{
+        width: 100%;
+    }
+    body main #branches .banner{
+        height: 70vh;
+        width: 47vw;
+    }
+    body main #branches .banner h3{
+        font-size: 1.7em;
+    }
+    body main #branches .banner h4{
+        font-size: 1.2em;
+    }
+    body main #branches .banner div{
+        height: 48.5%;
+        padding-top: 10%;
+    }
+    body main #branches .banner div p{
+        width: 95%;
+    }
+    body main #branches .banner div p:nth-child(1){
+        font-size: 1.1em;
+    }
+    body main #branches .banner div p:nth-child(2){
+        font-size: 1em;
+        margin-bottom: 15%;
+    }
+    body main #branches .banner div button{
+        height: 25%;
+        width: 90%;
+    }
+
+    body main #about{
+        flex-direction: column;
+    }
+    body main #about img{
+        height: 50%;
+    }
+    body main #about p{
+        text-align: center;
+    }
 }

@@ -1,34 +1,26 @@
-/* 
-======================================
-File: index_script.js
-Description: 
-Author: Samuel Felipe Ovalle Rodriguez
-Last modification: 3/4/2025
-======================================
-*/
 
-import {dropdown, scroll_dropdown_panels} from "../functions/header_functions.js";
-window.addEventListener("load", ()=>{
-    document.getElementById("opening_screen").scrollIntoView({ behavior: "auto" });
-    history.scrollRestoration = "manual";
-    
-    dropdown("menu", "73vw", 500)
-    dropdown("shopping", "60vw", 500)
+let menu_status = false;
+const menu = document.querySelector("#menu");
 
-    let screen_position = 0;
-    window.addEventListener("wheel", (e) => {  
-        let cursor_status = scroll_dropdown_panels();  
-        opening_screen.style.transition = "bottom 0.35s ease-out"      
-        if (e.deltaY > 0) {
-            // down
-            if (screen_position < 100 &&  cursor_status == true) {opening_screen.style.bottom = `${screen_position = screen_position + 10}%`}
-        } else{
-            // up
-            if (screen_position !== 0 &&  cursor_status == true) {opening_screen.style.bottom = `${screen_position = screen_position - 10}%`}
-        }
-    });
-    const scroll_arrow = document.querySelector(".scroll_arrow").addEventListener("click", ()=>{
-        opening_screen.style.transition = "bottom .7s ease-out"
-        opening_screen.style.bottom = `${screen_position = 100}%`
-    })
+document.querySelector(".icon_menu").addEventListener("click", ()=>{
+  menu.style.display = "block"
+  setTimeout(()=>{menu.style.left = "40vw";},1)
+  menu_status = true;
 })
+
+document.querySelector("main").addEventListener("click", ()=>{
+  if (menu_status === true) {
+    menu.style.left = "100vw";
+    setTimeout(()=>{menu.style.display = "none"}, 500)
+    menu_status = false;
+  }
+});
+
+// let number = "17866020877";
+// let message = encodeURIComponent(`Hello, I want to customize the frame ${product.Product_name}`);
+
+// let urlWeb = `https://web.whatsapp.com/send?phone=${number}&text=${message}`;
+// let urlApp = `https://wa.me/${number}?text=${message}`; 
+
+// if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) window.open(urlApp, "_blank");
+// else window.open(urlWeb, "_blank");
