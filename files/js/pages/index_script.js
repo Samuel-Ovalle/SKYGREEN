@@ -1,15 +1,20 @@
 
-document.addEventListener("DOMContentLoaded", ()=>{
-    if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) ;
-    else {
-        document.querySelector("header").remove
-        document.querySelector("body").insertAdjacentHTML("afterbegin", 
-            `
+let menu_status = false;
+const menu = document.querySelector("#menu");
 
-            `
-        )
-    }
+document.querySelector(".icon_menu").addEventListener("click", ()=>{
+  menu.style.display = "block"
+  setTimeout(()=>{menu.style.left = "40vw";},1)
+  menu_status = true;
 })
+
+document.querySelector("main").addEventListener("click", ()=>{
+  if (menu_status === true) {
+    menu.style.left = "100vw";
+    setTimeout(()=>{menu.style.display = "none"}, 500)
+    menu_status = false;
+  }
+});
 
 // let number = "17866020877";
 // let message = encodeURIComponent(`Hello, I want to customize the frame ${product.Product_name}`);

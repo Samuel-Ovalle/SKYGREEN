@@ -97,3 +97,56 @@ body header ul a{
     color: var(--text-color-1);
     font-size: 1.1em;
 }
+body header #menu,
+body header .icon_menu{
+    display: none;
+}
+
+@media (width < 648px) {
+    body header{
+        height: 8vh;
+        padding-right: 3vw;
+        justify-content: end;
+        align-items: center;
+    }
+    body header ul{
+        display: none;
+    }
+    body header .icon_menu{
+        display: block;
+        height: 55%;
+    }
+    body header #menu{
+        background: var(--back-color-4);
+        border-radius: 4vh 0vw 0vw 4vh;
+        color: var(--text-color-1);
+        height: 100vh;
+        width: 60vw;
+        padding-top: 3vh;
+        padding-right: 3vw;
+
+        text-align: end;
+        position: absolute;
+        top: 0;
+        left: 100vw;
+        font-size: 3.5em;
+        font-weight: 300;
+        overflow: auto;
+        z-index: 1100;
+
+        transition: left .5s;
+    }
+    body header #menu ul{
+        height: 80%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: end;
+    }
+    body header #menu ul li a{
+        border-bottom: 1px solid var(--text-color-1);
+        color: var(--text-color-1);
+        font-size: .7em;
+    }
+}
