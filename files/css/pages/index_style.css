@@ -19,14 +19,14 @@ body main #home{
     align-items: center;
 }
 body main #home img{
-    height: 45vh;
+    height: 30vh;
     filter: drop-shadow(-.5vh 1vh 3px rgba(0, 0, 0, .5));
     position: relative;
-    bottom: 2vh;
+    top: 7vh;
 }
 body main #home .text_box{
     position: relative;
-    bottom: 10vh;
+    top: 10vh;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -51,6 +51,8 @@ body main #home .view_page{
     width: 30vh;
     font-size: 1.3em;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    position: relative;
+    top: 15vh;
 }
 body main #home .view_page:hover{
     transform: translateY(-2px);
@@ -83,7 +85,9 @@ body main #branches .banner{
     align-items: center;
 }
 body main #branches .banner img{
-    height: 37%;
+    height: 27%;
+    margin-top: 5%;
+    margin-bottom: 5%;
     filter: drop-shadow(-.5vh 1vh 3px rgba(0, 0, 0, .5));
 }
 body main #branches .banner h3{
@@ -99,8 +103,9 @@ body main #branches .banner h4{
 body main #branches .banner div{
     border: 1px solid var(--border-color-1);
     background: var(--back-color-4);
-    height: 43.5%;
+    height: 45%;
     width: 90%;
+    padding: 0% 2%;
     margin-top: 3%;
     display: flex;
     flex-direction: column;
@@ -109,6 +114,7 @@ body main #branches .banner div{
 body main #branches .banner div p{
     height: 25%;
     padding-top: 5%;
+    margin-bottom: 0%;
     text-align: center;
 }
 body main #branches .banner div p:nth-child(1){
@@ -116,7 +122,7 @@ body main #branches .banner div p:nth-child(1){
 }
 body main #branches .banner div p:nth-child(2){
     font-size: 1.1em;
-    margin-bottom: 5%;
+    margin-bottom: 7%;
 }
 body main #branches .banner div button{
     border: 2px solid var(--border-color-1);
@@ -175,6 +181,7 @@ body footer{
     }
     body main #branches .banner div p{
         width: 95%;
+        margin-bottom: 13%;
     }
     body main #branches .banner div p:nth-child(1){
         font-size: 1.1em;

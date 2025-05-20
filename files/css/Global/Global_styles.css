@@ -10,7 +10,7 @@
     --text-color-4: #946523;
 
     --button-color-1: #a76d2f;
-    --button-color-2: #e6d7c0;
+    --button-color-2: #c9ab8d;
 
     --border-color-1: #6f521f;
 }
@@ -55,6 +55,10 @@
     font-display: swap;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 *{
     font-family: "Poppins", serif;
     font-weight: 300;
@@ -97,6 +101,7 @@ body header ul a{
     color: var(--text-color-1);
     font-size: 1.1em;
 }
+body header h3,
 body header #menu,
 body header .icon_menu{
     display: none;
@@ -104,10 +109,15 @@ body header .icon_menu{
 
 @media (width < 648px) {
     body header{
+        border-radius: 0vh 0vw 2vw 2vh;
+        background: linear-gradient(var(--back-color-1), var(--back-color-2) 300%);
         height: 8vh;
+        padding-left: 3vw;
         padding-right: 3vw;
-        justify-content: end;
+        justify-content: space-between;
         align-items: center;
+        position: fixed;
+        z-index: 1000;
     }
     body header ul{
         display: none;
@@ -116,17 +126,23 @@ body header .icon_menu{
         display: block;
         height: 55%;
     }
+    body header h3{
+        display: inline-block;
+        color: var(--text-color-1);
+        font-size: 1.5em;
+    }
     body header #menu{
+        display: block;
         background: var(--back-color-4);
         border-radius: 4vh 0vw 0vw 4vh;
         color: var(--text-color-1);
         height: 100vh;
         width: 60vw;
         padding-top: 3vh;
-        padding-right: 3vw;
+        padding-right: 5vw;
 
         text-align: end;
-        position: absolute;
+        position: fixed;
         top: 0;
         left: 100vw;
         font-size: 3.5em;
