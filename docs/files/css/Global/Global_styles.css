@@ -163,6 +163,6 @@ body header .icon_menu{
     body header #menu ul li a{
         border-bottom: 1px solid var(--text-color-1);
         color: var(--text-color-1);
-        font-size: .7em;
+        font-size: 8vw;
     }
 }

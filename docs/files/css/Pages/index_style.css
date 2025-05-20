@@ -158,6 +158,9 @@ body footer{
         grid-template-rows: 100vh 80vh 65vh;
     }
 
+    body main #home .text_box h1{
+        font-size: 16vw
+    }
     body main #home .text_box p{
         max-width: 90vw;
     }
@@ -176,19 +179,19 @@ body footer{
         font-size: 1.2em;
     }
     body main #branches .banner div{
-        height: 48.5%;
+        height: 55%;
         padding-top: 10%;
     }
     body main #branches .banner div p{
         width: 95%;
-        margin-bottom: 13%;
     }
     body main #branches .banner div p:nth-child(1){
-        font-size: 1.1em;
+        font-size: 4.5vw;
+        margin-bottom: 1vh;
     }
     body main #branches .banner div p:nth-child(2){
-        font-size: 1em;
-        margin-bottom: 15%;
+        font-size: 4.5vw;
+        margin-bottom: 5vh;
     }
     body main #branches .banner div button{
         height: 25%;
