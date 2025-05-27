@@ -12,7 +12,10 @@
     --button-color-1: #a76d2f;
     --button-color-2: #c9ab8d;
 
-    --border-color-1: #6f521f;
+    --border-color-1: #d8aa51;
+
+    --wall-color-1: #e8e3dc;
+    --wall-color-2: #c7c1b8;
 }
 
 @font-face {
@@ -77,6 +80,8 @@ li{
 
 body{
     background: radial-gradient(circle at 50% 0%, var(--back-color-1), var(--back-color-2) 40%);
+    height: fit-content;
+    width: 100vw;
     overflow-x: hidden;
 }
 body header{
@@ -105,6 +110,21 @@ body header h3,
 body header #menu,
 body header .icon_menu{
     display: none;
+}
+
+body main{
+    height: fit-content;
+    width: 100%;
+}
+body main #home{
+    height: 100vh;
+    width: 100%;
+}
+
+body footer{
+    background: var(--back-color-4);
+    height: 40vh;
+    width: 100%;
 }
 
 @media (width < 648px) {
@@ -163,6 +183,6 @@ body header .icon_menu{
     body header #menu ul li a{
         border-bottom: 1px solid var(--text-color-1);
         color: var(--text-color-1);
-        font-size: 8vw;
+        font-size: 55%;
     }
 }

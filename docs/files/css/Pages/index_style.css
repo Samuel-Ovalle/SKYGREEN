@@ -1,18 +1,4 @@
-body{
-    height: min-content;
-    width: 100vw;
-}
-body main{
-    height: 230vh;
-    width: 100%;
-    display: grid;
-    grid-template-rows: 100vh 75vh 55vh;
-    justify-items: center;
-}
-
 body main #home{
-    height: 100%;
-    width: 100%;
     padding-top: 11vh;
     display: flex;
     flex-direction: column;
@@ -60,8 +46,9 @@ body main #home .view_page:hover{
 }
 
 body main #branches{
-    height: 100%;
+    height: 75vh;
     width: 80%;
+    margin-left: 10%;
     padding-top: 10vh;
     display: flex;
     justify-content: space-evenly;
@@ -76,7 +63,7 @@ body main #branches::before {
     background: linear-gradient(to right, transparent, var(--border-color-1), transparent);
 }
 body main #branches .banner{
-    border: 2px solid var(--border-color-1);
+    border: 1px solid var(--border-color-1);
     box-shadow: inset .5vh .5vh 10px rgba(0, 0, 0, .5), inset -.5vh -.5vh 10px rgba(0, 0, 0, .5);
     height: 65vh;
     width: 30vw;
@@ -134,8 +121,9 @@ body main #branches .banner div button{
 }
 
 body main #about{
-    height: 100%;
+    height: 55vh;
     width: 80%;
+    margin-left: 10%;
     display: flex;
     align-items: center;
 }
@@ -144,12 +132,6 @@ body main #about img{
 }
 body main #about p{
     font-size: 1.2em;
-}
-
-body footer{
-    background: var(--back-color-4);
-    height: 40vh;
-    width: 100%;
 }
 
 @media (width < 648px) {
@@ -166,10 +148,12 @@ body footer{
     }
 
     body main #branches{
+        height: 80vh;
         width: 100%;
+        margin-left: 0;
     }
     body main #branches .banner{
-        height: 70vh;
+        height: 70wvh;
         width: 47vw;
     }
     body main #branches .banner h3{
