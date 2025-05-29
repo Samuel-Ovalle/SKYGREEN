@@ -62,6 +62,15 @@ body main #products{
     width: 100%;
     margin-bottom: 4%;
 }
+body main #products::before {
+    content: "";
+    position: absolute;
+    top: 100vh;
+    left: 5vw;
+    height: 2px;
+    width: 90%;
+    background: linear-gradient(to right, transparent, var(--border-color-1), transparent);
+}
 body main #products h3{
     height: 10vh;
     width: 100%;
@@ -136,6 +145,12 @@ body main #products .products_container .product button{
         width: 60%;
     }
 
+    body main #products{
+        padding-top: 8vh;
+    }
+    body main #products h3{
+        font-size: 200%;
+    }
     body main #products .products_container{
         display: flex;
         flex-direction: column;

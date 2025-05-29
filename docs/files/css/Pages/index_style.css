@@ -111,12 +111,14 @@ body main #branches .banner div p:nth-child(2){
     font-size: 1.1em;
     margin-bottom: 7%;
 }
-body main #branches .banner div button{
+body main #branches .banner button{
     border: 2px solid var(--border-color-1);
     border-radius: 1vh;
     background: linear-gradient(var(--back-color-1) -50%, var(--back-color-2));
-    height: 30%;
-    width: 60%;
+    height: 8vh;
+    width: 20vw;
+    position: absolute;
+    top: 163vh;
     font-size: 1.1em;
 }
 
@@ -148,13 +150,16 @@ body main #about p{
     }
 
     body main #branches{
-        height: 80vh;
+        height: 55vh;
         width: 100%;
         margin-left: 0;
     }
     body main #branches .banner{
-        height: 70wvh;
+        height: 41vh;
         width: 47vw;
+    }
+    body main #branches .banner img{
+        height: 47%;
     }
     body main #branches .banner h3{
         font-size: 1.7em;
@@ -163,8 +168,7 @@ body main #about p{
         font-size: 1.2em;
     }
     body main #branches .banner div{
-        height: 55%;
-        padding-top: 10%;
+        display: none;
     }
     body main #branches .banner div p{
         width: 95%;
@@ -177,9 +181,10 @@ body main #about p{
         font-size: 4.5vw;
         margin-bottom: 5vh;
     }
-    body main #branches .banner div button{
-        height: 25%;
-        width: 90%;
+    body main #branches .banner button{
+        height: 8vh;
+        width: 35vw;
+        top: 141vh;
     }
 
     body main #about{

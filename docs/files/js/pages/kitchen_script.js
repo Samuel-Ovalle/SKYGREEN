@@ -27,13 +27,14 @@ for (let i = 0; i < products.length; i++) {
 }
 
 let number = "17866020877";
-let message = encodeURIComponent(`Hello`);
-
-let urlWeb = `https://web.whatsapp.com/send?phone=${number}&text=${message}`;
-let urlApp = `https://wa.me/${number}?text=${message}`; 
 
 document.querySelectorAll("#buy_product").forEach(element => {
     element.addEventListener("click", ()=>{
+        let message = encodeURIComponent(`Hola, me gustaria hacer un pedido de ${element.parentElement.id.replace(/_/g, " ")}`);
+        
+        let urlWeb = `https://web.whatsapp.com/send?phone=${number}&text=${message}`;
+        let urlApp = `https://wa.me/${number}?text=${message}`; 
+        
         if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) window.open(urlApp, "_blank");
         else window.open(urlWeb, "_blank");
     })

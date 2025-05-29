@@ -35,7 +35,7 @@ body main #home button{
     background: var(--button-color-2);
     color: var(--text-color-3);
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    height: 7%;
+    height: 8%;
     width: 15vw;
     font-size: 1.3em;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -48,7 +48,17 @@ body main #home button:hover{
 body main #products{
     height: fit-content;
     width: 100%;
+    padding-top: 3vh;
     margin-bottom: 8vh;
+}
+body main #products::before {
+    content: "";
+    position: absolute;
+    top: 100vh;
+    left: 5vw;
+    height: 2px;
+    width: 90%;
+    background: linear-gradient(to right, transparent, var(--border-color-1), transparent);
 }
 body main #products .products_container{
     height: 100%;
@@ -61,22 +71,17 @@ body main #products .products_container{
 body main #products .products_container .product{
     border-radius: 1vh;
     border: 1px solid var(--border-color-1);
-    background: rgba(173, 148, 108, .1);
+    background: var(--back-color-5);
     height: 42vh;
     width: 30vw;
     display: flex;
     flex-direction: column;
     align-items: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-body main #products .products_container .product button{
-    border: none;
-    border-radius: 1vh;
-    background: var(--button-color-2);
-    color: var(--text-color-3);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    height: 10%;
-    width: 80%;
-    font-size: 1em;
+body main #products .products_container .product:hover{
+    transform: translateY(-1.5vh);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.4);
 }
 body main #products .products_container .product .img_product{
     border-radius: 1vh 1vh 0vh 0vh;
@@ -104,6 +109,56 @@ body main #products .products_container .product p{
     font-weight: 300;
 }
 
+body main #products .products_container #product_select{
+    border: 2px solid var(--border-color-1);
+    height: 60vh;
+    width: 42vw;
+    position: fixed;
+    top: 20vh;
+    left: 29vw;
+}
+body main #products .products_container #product_select:hover{
+    transform: translateY(0vh);
+    box-shadow: none;
+}
+body main #products .products_container #product_select h4{
+    height: 15%;
+    color: var(--border-color-1);
+    font-size: 170%;
+    display: flex;
+    align-items: center;
+}
+body main #products .products_container #product_select .img_product{
+    border-radius: 1vh;
+    height: 57%;
+    width: 60%;
+}
+body main #products .products_container #product_select p{
+    height: 12%;
+    font-size: 140%;
+}
+body main #products .products_container #product_select button{
+    border-radius: 1vh;
+    border: 2px solid var(--border-color-1);
+    background: transparent;
+    height: 6vh;
+    width: 10vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--border-color-1);
+    font-size: 3vh;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+body main #products .products_container #product_select button:hover{
+    transform: translateY(-.8vh);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.4);
+}
+body main #products .products_container #product_select button svg{
+    height: 80%;
+    margin-right: 5%;
+}
+
 @media (width < 648px) {
     body main #home p:nth-child(5){
         margin-bottom: 3vh;
@@ -119,5 +174,17 @@ body main #products .products_container .product p{
     }
     body main #products .products_container .product{
         width: 90%;
+    }
+    body main #products .products_container .product:hover{
+        transform: translateY(0vh);
+        box-shadow: none;
+    }
+
+    body main #products .products_container #product_select{
+        width: 80%;
+        left: 10%;
+    }
+    body main #products .products_container #product_select button{
+        width: 50%;
     }
 }
