@@ -30,7 +30,7 @@ body main #home .text_box p{
 body main #home .view_page{
     border: none;
     border-radius: 1vh;
-    background: var(--button-color-1);
+    background: linear-gradient(90deg, var(--button-color-3) -50%, var(--button-color-4));
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     color: var(--text-color-1);
     height: 8vh;
@@ -138,7 +138,6 @@ body main #about p{
 
 @media (width < 648px) {
     body main{
-        height: 240vh;
         grid-template-rows: 100vh 80vh 65vh;
     }
 

@@ -9,18 +9,20 @@ class product {
 
 let products = []
 
-products.push(new product("Arepa rellena de queso", "arepa_queso.png","arepa_queso.jpeg"))
-products.push(new product("Arepa rellena de queso con arequipe", "arepa_queso_arequipe.png","arepa_queso_arequipe.jpeg"))
-products.push(new product("Arepa rellena de queso con bacon", "arepa_queso_bacon.png","arepa_queso_bacon.jpeg"))
-products.push(new product("Arepa rellena de queso con bocadillo", "arepa_queso_bocadillo.png","arepa_queso_bocadillo.jpeg"))
+products.push(new product("Mini-arepas (12ud)", "mini-arepas.png", "", 12))
+products.push(new product("Arepa rellena de queso", "arepa_queso.png","arepa_queso.jpeg", 12))
+products.push(new product("Arepa de queso con arequipe", "arepa_queso_arequipe.png","arepa_queso_arequipe.jpeg", 15))
+products.push(new product("Arepa de queso con bacon", "arepa_queso_bacon.png","arepa_queso_bacon.jpeg", 18))
+products.push(new product("Arepa de queso con bocadillo", "arepa_queso_bocadillo.png","arepa_queso_bocadillo.jpeg", 15))
 
 for (let i = 0; i < products.length; i++) {
     document.querySelector(".products_container").insertAdjacentHTML("beforeend", 
         `
         <div class="product" id="${products[i].name.replace(/ /g, "_")}">
-            <img src="assets/img/kitchen/arepas/${products[i].img}" alt="">
             <p>${products[i].name}</p>
-            <button id="buy_product">Pedir</button>
+            <img src="assets/img/kitchen/arepas/${products[i].img}" alt="">
+            <div class="price">$${products[i].price}USD</div>
+            <button id="buy_product">¡Quiero probarla!</button>
         </div>
         `
     )

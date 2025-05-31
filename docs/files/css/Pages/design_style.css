@@ -32,8 +32,8 @@ body main #home p:nth-child(5){
 body main #home button{
     border: none;
     border-radius: 1vh;
-    background: var(--button-color-2);
-    color: var(--text-color-3);
+    background: linear-gradient(90deg, var(--button-color-3) -50%, var(--button-color-4));
+    color: var(--text-color-1);
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     height: 8%;
     width: 15vw;
@@ -96,7 +96,7 @@ body main #products .products_container .product .img_product img{
     max-height: 90%;
     max-width: 95%;
     object-fit: cover;
-    filter: drop-shadow(.5vh 1vh 7px rgba(0, 0, 0, .5));
+    filter: drop-shadow(.5vh 1vh 15px rgba(0, 0, 0, .5));
 }
 body main #products .products_container .product p{
     height: 20%;

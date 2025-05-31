@@ -4,6 +4,7 @@
     --back-color-3: #120F08;
     --back-color-4: #0d0901;
     --back-color-5: #251e17;
+    --back-color-6: #f7ece4;
 
     --text-color-1: #F2EAD8;
     --text-color-2: #C7BFAF;
@@ -12,6 +13,8 @@
 
     --button-color-1: #a76d2f;
     --button-color-2: #c9ab8d;
+    --button-color-3: #d79b54;
+    --button-color-4: #c07b40;
 
     --border-color-1: #d8aa51;
 
@@ -124,8 +127,32 @@ body main #home{
 
 body footer{
     background: var(--back-color-4);
-    height: 40vh;
+    height: 45vh;
     width: 100%;
+    font-size: 5vh;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    padding: 0% 5%;
+    padding-top: 2%;
+}
+body footer ul{
+    font-size: 3.5vh;
+    color: var(--text-color-4);
+}
+body footer ul li{
+    margin-top: 2%;
+    font-size: 3vh;
+    color: var(--text-color-2);
+}
+body footer .contact{
+    border-radius: 1vh;
+    background: var(--back-color-1);
+    color: var(--text-color-4);
+    height: 65%;
+    width: 25%;
+    padding: 1.5%;
+    font-size: 3.5vh;
 }
 
 @media (width < 648px) {
@@ -185,5 +212,21 @@ body footer{
         border-bottom: 1px solid var(--text-color-1);
         color: var(--text-color-1);
         font-size: 55%;
+    }
+    body footer{
+        height: 65vh;
+        flex-direction: column;
+    }
+    body footer ul{
+        width: 100%;
+        margin-top: 5%;
+    }
+    body footer .contact{
+        height: 35%;
+        width: 100%;
+        margin: 5% 0%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 }
