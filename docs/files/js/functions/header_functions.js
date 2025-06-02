@@ -1,5 +1,5 @@
 let menu_status = false;
-const menu = document.querySelector("#menu");
+const menu = document.querySelector("#mobile_devices_menu");
 
 document.querySelector(".icon_menu").addEventListener("click", ()=>{
   menu.style.display = "block"

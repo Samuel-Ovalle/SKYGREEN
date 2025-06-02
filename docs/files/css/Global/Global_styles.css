@@ -92,13 +92,18 @@ body header{
     box-shadow: 0vh 1vh 15px rgba(0, 0, 0, .5);
     height: 10%;
     width: 100%;
-    display: flex;
-    justify-content: center;
     position: absolute;
     top: 0;
     left: 0;
+    display: inline-block;
 }
-body header ul{
+body header #desktop_devices_menu{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+body header #desktop_devices_menu ul{
     height: 100%;
     width: 50%;
     display: flex;
@@ -106,12 +111,12 @@ body header ul{
     justify-content: space-around;
     align-items: center;
 }
-body header ul a{
+body header #desktop_devices_menu ul a{
     color: var(--text-color-1);
     font-size: 1.1em;
 }
-body header h3,
-body header #menu,
+body header #header_sub_logo,
+body header #mobile_devices_menu,
 body header .icon_menu{
     display: none;
 }
@@ -129,12 +134,13 @@ body footer{
     background: var(--back-color-4);
     height: 45vh;
     width: 100%;
-    font-size: 5vh;
-    font-weight: 600;
     display: flex;
     justify-content: space-between;
     padding: 0% 5%;
     padding-top: 2%;
+}
+body footer .sub_logo_skygreen{
+    height: 10%;
 }
 body footer ul{
     font-size: 3.5vh;
@@ -154,6 +160,12 @@ body footer .contact{
     padding: 1.5%;
     font-size: 3.5vh;
 }
+body footer .contact ul{
+    margin-top: 5%;
+}
+body footer .contact ul li{
+    font-size: 2.8vh;
+}
 
 @media (width < 648px) {
     body header{
@@ -162,24 +174,24 @@ body footer .contact{
         height: 8vh;
         padding-left: 3vw;
         padding-right: 3vw;
+        display: flex;
         justify-content: space-between;
         align-items: center;
         position: fixed;
         z-index: 1000;
     }
-    body header ul{
+    body header #desktop_devices_menu{
         display: none;
     }
     body header .icon_menu{
-        display: block;
+        display: inline-block;
         height: 55%;
     }
-    body header h3{
+    body header #header_sub_logo{
         display: inline-block;
-        color: var(--text-color-1);
-        font-size: 1.5em;
+        height: 30%;
     }
-    body header #menu{
+    body header #mobile_devices_menu{
         display: block;
         background: var(--back-color-4);
         border-radius: 4vh 0vw 0vw 4vh;
@@ -200,7 +212,7 @@ body footer .contact{
 
         transition: left .5s;
     }
-    body header #menu ul{
+    body header #mobile_devices_menu ul{
         height: 80%;
         width: 100%;
         display: flex;
@@ -208,14 +220,18 @@ body footer .contact{
         justify-content: space-evenly;
         align-items: end;
     }
-    body header #menu ul li a{
+    body header #mobile_devices_menu ul li a{
         border-bottom: 1px solid var(--text-color-1);
         color: var(--text-color-1);
         font-size: 55%;
     }
     body footer{
-        height: 65vh;
+        height: 70vh;
         flex-direction: column;
+    }
+    body footer .sub_logo_skygreen{
+        margin-top: 2%;
+        height: 5%;
     }
     body footer ul{
         width: 100%;
@@ -228,5 +244,12 @@ body footer .contact{
         display: flex;
         flex-direction: column;
         align-items: center;
+    }
+    body footer .contact ul{
+        margin-top: 2%;
+    }
+    body footer .contact ul li{
+        font-size: 2.8vh;
+        text-align: center;
     }
 }

@@ -20,7 +20,7 @@ for (let i = 0; i < products.length; i++) {
         `
         <div class="product" id="${products[i].name.replace(/ /g, "_")}">
             <p>${products[i].name}</p>
-            <img src="assets/img/kitchen/arepas/${products[i].img}" alt="">
+            <img src="assets/img/kitchen/arepas/${products[i].img}" alt="${products[i].name}" loading="lazy">
             <div class="price">$${products[i].price}USD</div>
             <button id="buy_product">¡Quiero probarla!</button>
         </div>

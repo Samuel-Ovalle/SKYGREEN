@@ -18,12 +18,12 @@ body main #home .text_box{
     flex-direction: column;
     align-items: center;
 }
-body main #home .text_box h1{
-    color: var(--text-color-1);
-    margin-bottom: 2vh;
-    font-size: 4em;
+body main #home .text_box #logo_skygreen{
+    margin-bottom: 5vh;
+    width: 60%;
 }
-body main #home .text_box p{
+body main #home .text_box h1{
+    height: 12vh;
     max-width: 40vw;
     font-size: 1.7em;
 }
@@ -35,7 +35,10 @@ body main #home .view_page{
     color: var(--text-color-1);
     height: 8vh;
     width: 30vh;
-    font-size: 1.3em;
+    font-size: 1.7em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     position: relative;
     top: 15vh;
@@ -48,8 +51,9 @@ body main #home .view_page:hover{
 body main #branches{
     height: 75vh;
     width: 80%;
-    margin-left: 10%;
     padding-top: 10vh;
+    margin-left: 10%;
+    margin-bottom: 5%;
     display: flex;
     justify-content: space-evenly;
 }
@@ -77,15 +81,13 @@ body main #branches .banner img{
     margin-bottom: 5%;
     filter: drop-shadow(-.5vh 1vh 3px rgba(0, 0, 0, .5));
 }
-body main #branches .banner h3{
-    color: var(--text-color-1);
-    font-size: 2em;
-    font-weight: 300;
+body main #branches .banner .sub_logo_skygreen{
+    width: 40%;
+    margin-top: 0%;
 }
-body main #branches .banner h4{
-    color: var(--text-color-4);
-    font-size: 1.3em;
-    font-weight: 600;
+body main #branches .banner .branch_logo{
+    margin-top: 2%;
+    height: 4%;
 }
 body main #branches .banner div{
     border: 1px solid var(--border-color-1);
@@ -137,15 +139,10 @@ body main #about p{
 }
 
 @media (width < 648px) {
-    body main{
-        grid-template-rows: 100vh 80vh 65vh;
-    }
 
     body main #home .text_box h1{
-        font-size: 16vw
-    }
-    body main #home .text_box p{
-        max-width: 90vw;
+        max-width: 90%;
+        font-size: 5vw
     }
 
     body main #branches{
@@ -160,11 +157,13 @@ body main #about p{
     body main #branches .banner img{
         height: 47%;
     }
-    body main #branches .banner h3{
-        font-size: 1.7em;
+    body main #branches .banner .sub_logo_skygreen{
+        width: 80%;
+        margin-top: 4%;
     }
-    body main #branches .banner h4{
-        font-size: 1.2em;
+    body main #branches .banner .branch_logo{
+        height: 6%;
+        margin-top: 3%;
     }
     body main #branches .banner div{
         display: none;
@@ -182,7 +181,7 @@ body main #about p{
     }
     body main #branches .banner button{
         height: 8vh;
-        width: 35vw;
+        width: 42%;
         top: 141vh;
     }
 

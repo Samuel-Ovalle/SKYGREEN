@@ -9,6 +9,7 @@ body main #home #kitchen_complementary{
 body main #home .home_text{
     height: 90%;
     width: 50%;
+    padding-top: 2%;
     position: relative;
     top: 10vh;
     display: flex;
@@ -20,37 +21,43 @@ body main #home .home_text #kitchen_logo{
     height: 30vh;
     margin: 2% 0% 3% 0%;
 }
-body main #home .home_text h1{
-    font-size: 3em;
+body main #home .home_text #logo_skygreen{
+    width: 30%;
 }
-body main #home .home_text h2{
-    color: var(--text-color-4);
-    font-size: 2em;
-    font-weight: 300;
+body main #home .home_text #logo_skygreen_kitchen{
+    width: 20%;
+    margin-top: 1%;
     margin-bottom: 3%;
 }
-body main #home .home_text p{
+body main #home .home_text h1{
+    height: 12vh;
+    padding-top: 2%;
     text-align: center;
 }
-body main #home .home_text p:nth-child(4){
-    font-size: 2em;
-    margin-bottom: 1%;
+body main #home .home_text .button_container{
+    height: 10%;
+    width: 60%;
+    display: flex;
+    justify-content: space-around;
 }
-body main #home .home_text p:nth-child(5){
-    width: 80%;
-    margin-bottom: 5%;
-    font-size: 1.7em;
-}
-body main #home .home_text button{
+body main #home .home_text .button_container a{
     border: none;
     border-radius: 1vh;
-    background: var(--button-color-2);
-    color: var(--text-color-3);
+    background: linear-gradient(90deg, var(--button-color-3) -50%, var(--button-color-4));
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    height: 7%;
-    width: 32%;
+    color: var(--text-color-1);
+    height: 100%;
+    width: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 1.3em;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+body main #home .home_text .button_container #go_back_button{
+    border: 1px solid var(--border-color-1);
+    background: transparent;
+    color: var(--border-color-1);
 }
 body main #home .home_text button:hover{
     transform: translateY(-2px);
@@ -71,7 +78,7 @@ body main #products::before {
     width: 90%;
     background: linear-gradient(to right, transparent, var(--border-color-1), transparent);
 }
-body main #products h3{
+body main #products h2{
     height: 10vh;
     width: 100%;
     padding-top: 1vh;
@@ -143,24 +150,32 @@ body main #products .products_container .product button{
         object-fit: cover;
         visibility: hidden;
     }
-    body main #home .home_text p{
+    body main #home .home_text #logo_skygreen{
+        width: 60%;
+    }
+    body main #home .home_text #logo_skygreen_kitchen{
+        width: 45%;
+        margin-top: 2%;
+        margin-bottom: 3%;
+    }
+    body main #home .home_text h1{
+        height: 20%;
+        width: 80%;
+        padding-top: 7%;
+        font-size: 3vh;
+    }
+    body main #home .home_text .button_container{
+        margin-top: 5%;
         width: 90%;
     }
-    body main #home .home_text p:nth-child(4){
-        font-size: 1.7em;
-    }
-    body main #home .home_text p:nth-child(5){
-        font-size: 1.2em;
-        margin-bottom: 7vh;
-    }
-    body main #home .home_text button{
-        width: 60%;
+    body main #home .home_text .button_container a{
+        width: 47%;
     }
 
     body main #products{
         padding-top: 8vh;
     }
-    body main #products h3{
+    body main #products h2{
         font-size: 200%;
     }
     body main #products .products_container{

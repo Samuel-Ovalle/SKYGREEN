@@ -9,36 +9,43 @@ body main #home img{
     margin-bottom: 2vh;
     filter: drop-shadow(-.5vh 1vh 3px rgba(0, 0, 0, .5));
 }
-body main #home h1{
-    color: var(--text-color-1);
-    font-size: 4em;
+body main #home #logo_skygreen{
+    width: 30%;
 } 
-body main #home h2{
-    color: var(--text-color-4);
-    font-size: 2.5em;
-    font-weight: 300;
-    margin-bottom: 2vh;
+body main #home #logo_skygreen_designs{
+    width: 15%;
+    margin-top: 1%;
+    margin-bottom: 1.5%;
 }
-body main #home p{
+body main #home h1{
+    height: 15vh;
+    width: 45%;
     text-align: center;
 }
-body main #home p:nth-child(4){
-    font-size: 1.7em;
+body main #home .button_container{
+    height: 10%;
+    width: 40%;
+    display: flex;
+    justify-content: space-around;
 }
-body main #home p:nth-child(5){
-    font-size: 1.3em;
-    margin-bottom: 6vh;
-}
-body main #home button{
+body main #home .button_container a{
     border: none;
     border-radius: 1vh;
     background: linear-gradient(90deg, var(--button-color-3) -50%, var(--button-color-4));
-    color: var(--text-color-1);
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    height: 8%;
+    color: var(--text-color-1);
+    height: 100%;
     width: 15vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 1.3em;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+body main #home .button_container #go_back_button{
+    border: 1px solid var(--border-color-1);
+    background: transparent;
+    color: var(--border-color-1);
 }
 body main #home button:hover{
     transform: translateY(-2px);
@@ -160,12 +167,24 @@ body main #products .products_container #product_select button svg{
 }
 
 @media (width < 648px) {
-    body main #home p:nth-child(5){
-        margin-bottom: 3vh;
-    }
-    body main #home button{
+    body main #home #logo_skygreen{
         width: 60%;
+    } 
+    body main #home #logo_skygreen_designs{
+        width: 35%;
+        margin-top: 1%;
+        margin-bottom: 5%;
     }
+    body main #home h1{
+        width: 90%;
+        font-size: 3vh;
+    }
+    body main #home .button_container{
+        width: 90%;
+    }
+    body main #home .button_container a{
+        width: 47%;
+    } 
     body main #products{
         padding-top: 10vh;
     }
