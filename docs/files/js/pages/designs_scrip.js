@@ -52,6 +52,13 @@ document.querySelectorAll(".product").forEach(element => {
                         </svg>
                         Comprar
                     </button>
+                    <svg class="esc_icon" role="img" aria-label="menu icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"viewBox="0 0 48.07 45.61" style="enable-background:new 0 0 48.07 45.61;" xml:space="preserve">
+                        <style type="text/css">
+                            .st3{fill:none;stroke:var(--border-color-1);stroke-width:7;stroke-linecap:round;stroke-miterlimit:10;}
+                        </style>
+                        <line class="st3 line1" x1="10" y1="35" x2="37" y2="10"/>
+                        <line class="st3 line2" x1="10" y1="10" x2="37" y2="35"/>
+                    </svg>
                 </div>
                 `
             )
@@ -67,6 +74,11 @@ document.querySelectorAll(".product").forEach(element => {
                 else window.open(urlWeb, "_blank");
             })
             
+            document.querySelector(".esc_icon").addEventListener("click", ()=>{
+                document.querySelector("#product_select").remove()
+                products_status = false
+            })
+
             setTimeout(() => {
                 products_status = true;
             }, 1);

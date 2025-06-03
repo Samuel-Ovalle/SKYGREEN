@@ -4,8 +4,6 @@
 - adicion de link para icono de pestaña del navegador
 
 * task finished
-- completar footer
-- actualizacion de footer
-- logo paso de texto a svg
-- finalizar holdig de skygreen
-- mejoras de SEO
+- solucionar bugs con tamaño de textos h1
+- solucionar bug tamaño de texto menu responsive
+- agregar "x" al pop up de design para salir de la compra

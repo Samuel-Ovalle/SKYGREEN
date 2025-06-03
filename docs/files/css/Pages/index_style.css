@@ -187,6 +187,7 @@ body main #about p{
 
     body main #about{
         flex-direction: column;
+        margin-bottom: 15%;
     }
     body main #about img{
         height: 50%;

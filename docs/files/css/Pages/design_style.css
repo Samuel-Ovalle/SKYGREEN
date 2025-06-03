@@ -18,8 +18,10 @@ body main #home #logo_skygreen_designs{
     margin-bottom: 1.5%;
 }
 body main #home h1{
-    height: 15vh;
+    height: fit-content;
     width: 45%;
+    margin-bottom: 15%;
+    font-size: 1.7em;
     text-align: center;
 }
 body main #home .button_container{
@@ -39,6 +41,7 @@ body main #home .button_container a{
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
     font-size: 1.3em;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -164,6 +167,12 @@ body main #products .products_container #product_select button:hover{
 body main #products .products_container #product_select button svg{
     height: 80%;
     margin-right: 5%;
+}
+body main #products .products_container #product_select .esc_icon{
+    height: 8%;
+    position: absolute;
+    top: 2%;
+    left: 82%;
 }
 
 @media (width < 648px) {

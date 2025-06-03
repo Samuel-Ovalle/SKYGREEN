@@ -3,7 +3,7 @@ const menu = document.querySelector("#mobile_devices_menu");
 
 document.querySelector(".icon_menu").addEventListener("click", ()=>{
   menu.style.display = "block"
-  setTimeout(()=>{menu.style.left = "40vw";},1)
+  setTimeout(()=>{menu.style.left = "35vw";},1)
   menu_status = true;
 })
 document.querySelectorAll("#menu ul li a").forEach(element => {

@@ -33,6 +33,7 @@ body main #home .home_text h1{
     height: 12vh;
     padding-top: 2%;
     text-align: center;
+    font-size: 1.7em;
 }
 body main #home .home_text .button_container{
     height: 10%;
@@ -51,6 +52,7 @@ body main #home .home_text .button_container a{
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
     font-size: 1.3em;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
