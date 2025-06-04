@@ -6,7 +6,7 @@ document.querySelector(".icon_menu").addEventListener("click", ()=>{
   setTimeout(()=>{menu.style.left = "35vw";},1)
   menu_status = true;
 })
-document.querySelectorAll("#menu ul li a").forEach(element => {
+document.querySelectorAll("#mobile_devices_menu ul li a").forEach(element => {
   element.addEventListener("click", ()=>{
     if (menu_status === true) {
       menu.style.left = "100vw";

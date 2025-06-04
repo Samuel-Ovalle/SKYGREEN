@@ -176,6 +176,7 @@ body main #products .products_container .product button{
 
     body main #products{
         padding-top: 8vh;
+        margin-bottom: 10%;
     }
     body main #products h2{
         font-size: 200%;

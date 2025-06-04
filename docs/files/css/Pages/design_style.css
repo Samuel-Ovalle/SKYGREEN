@@ -10,17 +10,17 @@ body main #home img{
     filter: drop-shadow(-.5vh 1vh 3px rgba(0, 0, 0, .5));
 }
 body main #home #logo_skygreen{
-    width: 30%;
+    width: 20%;
 } 
 body main #home #logo_skygreen_designs{
-    width: 15%;
+    width: 10%;
     margin-top: 1%;
     margin-bottom: 1.5%;
 }
 body main #home h1{
     height: fit-content;
     width: 45%;
-    margin-bottom: 15%;
+    margin-bottom: 2.5%;
     font-size: 1.7em;
     text-align: center;
 }
@@ -106,7 +106,9 @@ body main #products .products_container .product .img_product img{
     max-height: 90%;
     max-width: 95%;
     object-fit: cover;
-    filter: drop-shadow(.5vh 1vh 15px rgba(0, 0, 0, .5));
+    filter: drop-shadow(0vh 1vh 3px rgba(0, 0, 0, .5));
+    transition: opacity 0.4s ease;
+    opacity: 1;     
 }
 body main #products .products_container .product p{
     height: 20%;
@@ -133,10 +135,12 @@ body main #products .products_container #product_select:hover{
 }
 body main #products .products_container #product_select h4{
     height: 15%;
+    max-width: 55%;
     color: var(--border-color-1);
     font-size: 170%;
     display: flex;
     align-items: center;
+    text-align: center;
 }
 body main #products .products_container #product_select .img_product{
     border-radius: 1vh;
@@ -173,6 +177,7 @@ body main #products .products_container #product_select .esc_icon{
     position: absolute;
     top: 2%;
     left: 82%;
+    cursor: pointer;
 }
 
 @media (width < 648px) {

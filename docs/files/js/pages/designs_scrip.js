@@ -9,20 +9,21 @@ class product {
 
 let products = []
 
-products.push(new product("Baby sal", "Baby_sal.png", 350, 0))
-products.push(new product("Butterfly", "Butterflys.png", 200, 1))
-products.push(new product("Cora", "Cora.png", 150, 2))
-products.push(new product("Flat moon", "Flat_moon.png", 300, 3))
-products.push(new product("Magic forest", "Magic_forest.png", 500, 4))
-products.push(new product("Mini cactus", "Mini_cactus.png", 25, 5))
-products.push(new product("Paradise drawers", "Paradise_drawers.png", 300, 6))
+products.push(new product("Baby sal", 2, 350, 0))
+products.push(new product("Butterflys", 2, 200, 1))
+products.push(new product("Cora", 1, 150, 2))
+products.push(new product("Flat moon", 1, 300, 3))
+products.push(new product("Magic forest", 1, 550, 4))
+products.push(new product("Mini cactus", 1, 25, 5))
+products.push(new product("Paradise drawers", 1, 300, 6))
 
 for (let i = 0; i < products.length; i++) {
+    let product_back_name = products[i].name.replace(/ /g, "_")
     document.querySelector(".products_container").insertAdjacentHTML("beforeend", 
         `
-        <div class="product ${products[i].name.replace(/ /g, "_")}" id="${products[i].id}">
+        <div class="product ${product_back_name}" id="${products[i].id}">
             <div class="img_product">
-                <img src="assets/img/designs/used/${products[i].img}" alt="">
+                <img src="assets/img/designs/used/${product_back_name}-1.png" alt="">
             </div>
             <p>${products[i].name}</p>
         </div>
@@ -30,7 +31,33 @@ for (let i = 0; i < products.length; i++) {
     )
 }
 
+const cycling_images = (product, count_img, interval)=>{
+    let img_index = 1;
+    const total_img = count_img;
+    let img = document.querySelector(`.${product}`).children[0].children[0];
+
+    setInterval(()=>{
+        img_index = (img_index < total_img) ? img_index + 1 : 1;
+        img.style.opacity = 0;
+        setTimeout(() => {
+            img.src = img.src.replace(/-\d+\.png$/, `-${img_index}.png`);
+            img.onload = ()=>{
+                img.style.opacity = 1;
+            }
+        }, 400);
+    }, interval)
+}
+
+products.forEach(product => {
+    if (product.img > 1) {
+        let product_back_name = product.name.replace(/ /g, "_")
+        cycling_images(product_back_name, product.img, 4000)
+    }
+});
+
+
 let products_status = false;
+
 document.querySelectorAll(".product").forEach(element => {
     element.addEventListener("click", ()=>{
         if (products_status === false) {
