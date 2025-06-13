@@ -132,7 +132,7 @@ document.querySelectorAll(".product").forEach(element => {
             
             document.querySelector("#buy_product").addEventListener("click", ()=>{
                 let number = "17866020877";
-                let message = encodeURIComponent(`Hola, me gustaria adquirir el cuadro ${products[element.id].name}`);
+                let message = encodeURIComponent(`Hola, me gustaria adquirir el cuadro ${products[element.id.split("-")[1]].name}`);
                 
                 let urlWeb = `https://web.whatsapp.com/send?phone=${number}&text=${message}`;
                 let urlApp = `https://wa.me/${number}?text=${message}`; 
